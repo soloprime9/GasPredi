@@ -1,59 +1,119 @@
-import { Metadata } from 'next';
-import HomeLatestPosts from '@/components/HomeLatestPosts';
-import CreatePage from "@/components/CreatePage";
-import SearchGo from "@/components/SearchGo";
-import OnlyFeed from "@/components/OnlyFeed";
-import Upload from "@/components/Upload";
-import Village from "@/components/Village";
- 
-
+// app/page.jsx
 export const metadata = {
-  title: "Fond Peace",
+  title: "Indian Serials Written Updates - Latest Episodes, Spoilers & Twists",
   description:
-    "Fondpeace.com is a free and modern all-in-one social platform that combines powerful web search and community features in one place. Whether you're looking to connect with friends, explore trending news, or search the internet like you would with Google or Bing, Fondpeace offers a seamless experience. Stay updated with what's happening around you, watch and share videos, chat with others, create posts, join communities, and explore the web—all from one easy-to-use platform. Built for speed, simplicity, and social engagement, Fondpeace.com is designed to be your go-to digital hub for information and interaction.",
+    "Get the latest written updates, spoilers, upcoming twists, and news for popular Indian TV serials. Daily updates for Yeh Rishta Kya Kehlata Hai, Anupamaa, Ghum Hai Kisikey Pyaar Mein, and more.",
   keywords:
-    "free social media platform, trending news and videos, all-in-one search and social platform, Online Chatting, Xhamster, blacked.com, jav.guru, jav guru, perplexity ai, macrumors, today written update, instagram, youtube, brazzer, angela white, alyx star, how to, Fond Peace AI, free AI tools, AI search engine, AI assistant, AI automation, AI content generator, AI-powered search, AI chatbot, AI-driven solutions, AI-powered research, AI discovery, AI-powered learning, AI innovation, AI productivity, AI-powered applications, AI-powered insights, AI-powered recommendations, AI for everyone, next-gen AI, best free AI tools, AI-powered knowledge base, AI-driven search engine, AI-powered decision-making, AI-powered problem-solving, AI assistant for work and study, AI-powered writing tools, AI-powered creative solutions, chatgpt, openai, Claude AI, Grok AI, Elon Musk AI, search engine alternatives, written updates, Telly updates, Anupama, YRKKH, Bhagya Lakshmi, Dhruv Rathee, MacRumors, 9to5Mac, Apple Insider, Apple rumors, iPhone news, AI SEO optimization, 2025 Google SEO, AI-powered blogging, real-time AI answers, best AI tools 2025, AI automation for business, SEO AI tools, AI-driven marketing, Google core update 2025, AI-enhanced productivity, AI-generated content, machine learning trends 2025, AI-powered analytics, AI for digital marketing, AI SEO ranking strategies, how to rank on Google with AI, best AI-powered research tools,youtube thumbnail tester, thumbnail preview, youtube seo, preview thumbnail youtube,Google-like search engine,chat and connect online,post, share, explore content,modern social network,discover local and global news,video sharing platform,free community platform",
+    "Indian serials, written updates, TV shows, spoilers, upcoming twists, Yeh Rishta Kya Kehlata Hai, Anupamaa, Ghum Hai Kisikey Pyaar Mein",
+  authors: [{ name: "Your Name" }],
+  creator: "Your Name",
+  publisher: "Your Blog Name",
+  robots: "index, follow",
   openGraph: {
-    title: "Fond Peace",
+    title: "Indian Serials Written Updates - Latest Episodes, Spoilers & Twists",
     description:
-      "Fondpeace.com is a free social platform where you can search the web, share posts and videos, discover trending news, chat, and stay connected—all in one place.",
-    url: "https://fondpeace.com",
-    images: [
-      {
-        url: "https://www.fondpeace.com/Fondpeace.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
+      "Daily written updates, spoilers, and upcoming twists for top Indian TV serials.",
+    url: "https://yourwebsite.com",
+    siteName: "Indian Serials Written Updates",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fond Peace",
+    title: "Indian Serials Written Updates - Latest Episodes & Spoilers",
     description:
-      "Fondpeace.com is a free social platform where you can search the web, share posts and videos, discover trending news, chat, and stay connected—all in one place.",
-    images: ["https://www.fondpeace.com/Fondpeace.jpg"],
-    site: "@Gayatrisingho",
-  },
-  alternates: {
-    canonical: "https://fondpeace.com",
+      "Get daily written updates, spoilers, and upcoming twists for top Indian serials.",
   },
 };
 
-export default function Page() {
-  
+export default function Home() {
   return (
-    <div className="flex flex-col items-center p-4">
-      {/* Title */}
-      <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-        FondPeace.com
+    <main className="max-w-5xl mx-auto p-4">
+      {/* Main Heading */}
+      <h1 className="text-3xl font-bold text-center mb-6">
+        Indian Serials Written Updates, Spoilers & Upcoming Twists
       </h1>
 
-      {/* Village Component */}
-      <div className="w-full max-w-6xl">
-        <Village />
-      </div>
-    </div>
-  )
+      {/* Category Navigation */}
+      <nav className="flex gap-4 justify-center mb-8">
+        <a href="/category/written-updates" className="text-blue-600 hover:underline">
+          Written Updates
+        </a>
+        <a href="/category/spoilers" className="text-blue-600 hover:underline">
+          Spoilers
+        </a>
+        <a href="/category/upcoming-twists" className="text-blue-600 hover:underline">
+          Upcoming Twists
+        </a>
+      </nav>
 
-};
+      {/* Latest Posts Section */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Latest Written Updates</h2>
+        <ul className="grid gap-6 md:grid-cols-2">
+          {/* Example static posts (replace with dynamic later) */}
+          <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
+            <img
+              src="/images/post1.jpg"
+              alt="Yeh Rishta Kya Kehlata Hai Written Update"
+              className="rounded-lg mb-3"
+            />
+            <h3 className="text-lg font-bold mb-2">
+              Yeh Rishta Kya Kehlata Hai - Latest Episode Written Update
+            </h3>
+            <p className="text-gray-700 text-sm mb-3">
+              Full written update of today's episode with all the latest twists and drama...
+            </p>
+            <a
+              href="/posts/yeh-rishta-latest-update"
+              className="text-blue-500 hover:underline"
+            >
+              Read More →
+            </a>
+          </li>
+          <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
+            <img
+              src="/images/post2.jpg"
+              alt="Anupamaa Written Update"
+              className="rounded-lg mb-3"
+            />
+            <h3 className="text-lg font-bold mb-2">
+              Anupamaa - Today’s Written Update with Latest Twist
+            </h3>
+            <p className="text-gray-700 text-sm mb-3">
+              Get the complete written update of Anupamaa’s latest episode...
+            </p>
+            <a
+              href="/posts/anupamaa-latest-update"
+              className="text-blue-500 hover:underline"
+            >
+              Read More →
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      {/* Spoilers Section */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold mb-4">Spoilers & Upcoming Twists</h2>
+        <ul className="space-y-3">
+          <li>
+            <a href="/spoilers/yeh-rishta-big-twist" className="text-blue-500 hover:underline">
+              Yeh Rishta Kya Kehlata Hai: Big Twist Ahead in Upcoming Episodes
+            </a>
+          </li>
+          <li>
+            <a href="/spoilers/anupamaa-shocking-turn" className="text-blue-500 hover:underline">
+              Anupamaa: Shocking Turn to Change Storyline
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-12 border-t pt-6 text-center text-gray-500 text-sm">
+        © {new Date().getFullYear()} Your Blog Name. All rights reserved.
+      </footer>
+    </main>
+  );
+}
