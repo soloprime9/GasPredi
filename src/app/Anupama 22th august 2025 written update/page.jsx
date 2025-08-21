@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useMemo, useState } from "react";
-import MarkdownRenderer from "@/components/MarkdownRenderer";
+import MarkdownRenderer from "@/Components/MarkdownRenderer";
 
 // ✅ CONFIG — Update these per post
 const POST = {
