@@ -2,19 +2,19 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SeoArticle from "@/Components/SeoArticle";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), "src/posts", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {
-    return <div>Post not found</div>;
+    return notFound(); // Shows 404 page instead of "Post not found"
   }
 
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
-  // Use file mtime as modified date
   const stats = fs.statSync(filePath);
   const modifiedDate = stats.mtime.toISOString();
 
