@@ -61,21 +61,14 @@ export default function Home() {
 
       {/* H1 */}
       <h1 className="text-3xl font-bold text-center mb-6">Today Written Update</h1>
-      <p className="text-center mb-8">
-        Your trusted source for daily written updates, spoilers, and upcoming twists from popular Indian TV serials.
-      </p>
+      
 
       {/* Categories */}
       <nav className="flex gap-6 justify-center mb-10">
         <a href="/category/written-updates" className="text-blue-600 hover:underline">
           Written Updates
         </a>
-        <a href="/category/spoilers" className="text-blue-600 hover:underline">
-          Spoilers
-        </a>
-        <a href="/category/upcoming-twists" className="text-blue-600 hover:underline">
-          Upcoming Twists
-        </a>
+        
       </nav>
 
       {/* Latest Posts */}
