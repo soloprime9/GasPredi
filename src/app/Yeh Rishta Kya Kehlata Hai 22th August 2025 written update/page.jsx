@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import SeoArticle from "@/components/SeoArticle";
+import SeoArticle from "@/Components/SeoArticle";
 
 export default async function Page({ params }) {
   const { slug } = params;
