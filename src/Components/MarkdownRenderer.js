@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-
+ 
 const MarkdownRenderer = ({ content }) => {
   return (
     <article className="prose prose-lg md:prose-xl lg:prose-2xl mx-auto dark:prose-invert">
@@ -60,3 +60,4 @@ const MarkdownRenderer = ({ content }) => {
 };
 
 export default MarkdownRenderer;
+
