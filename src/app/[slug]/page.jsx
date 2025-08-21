@@ -5,7 +5,7 @@ import SeoArticle from "@/Components/SeoArticle";
 
 export default async function Page({ params }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), "src/app/posts", `${slug}.md`);
+  const filePath = path.join(process.cwd(), "src/posts", `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {
     return <div>Post not found</div>;
