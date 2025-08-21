@@ -4,12 +4,12 @@ import matter from "gray-matter";
 import SeoArticle from "@/Components/SeoArticle";
 import { notFound } from "next/navigation";
 
-export default async function Page({ params }) {
-  const { slug } = params;
-  const filePath = path.join(process.cwd(), "src/posts", `${slug}.md`);
+export default function Page() {
+  // Hardcode the filename
+  const filePath = path.join(process.cwd(), "src/posts", "anupama-21-august-2025.md");
 
   if (!fs.existsSync(filePath)) {
-    return notFound(); // Shows 404 page instead of "Post not found"
+    return notFound(); // Shows 404 page
   }
 
   const fileContent = fs.readFileSync(filePath, "utf-8");
