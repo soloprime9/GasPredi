@@ -1,4 +1,4 @@
-// app/page.jsx
+// app/page.jsx 
 export const metadata = {
   title: "Today Written Update",
   description:
