@@ -1,9 +1,7 @@
-// src/components/SeoArticle.jsx
-"use client";
-import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import MarkdownRenderer from "@/Components/MarkdownRenderer";
+import FaqItem from "./FaqItem"; // Client component for FAQ toggle
 
 function formatHuman(iso) {
   try {
@@ -30,7 +28,6 @@ export default function SeoArticle({
   relatedPosts = [],
   author = { name: "todaywrittenupdate team" },
 }) {
-  // Article JSON-LD
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -80,21 +77,16 @@ export default function SeoArticle({
 
       <main className="mx-auto max-w-4xl px-4 py-8">
         <header className="mb-6 text-center">
-
-          {/* Thumbnail */}
-        {ogImage && (
-          <div className="mb-6">
-            <img src={ogImage} alt={title} className="w-full rounded-lg shadow-sm object-cover max-h-[520px]" />
-          </div>
-        )}
-          
+          {ogImage && (
+            <div className="mb-6">
+              <img src={ogImage} alt={title} className="w-full rounded-lg shadow-sm object-cover max-h-[520px]" />
+            </div>
+          )}
           <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
           <div className="mt-2 text-sm text-gray-600">
             By <strong>{author.name}</strong> • Published: {formatHuman(publishDate)} • Updated: {formatHuman(modifiedDate)}
           </div>
         </header>
-
-        
 
         {/* Markdown content */}
         <article className="prose prose-lg max-w-none">
@@ -113,7 +105,7 @@ export default function SeoArticle({
           </section>
         )}
 
-        {/* Related posts (below FAQ) */}
+        {/* Related posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-10">
             <h2 className="text-2xl font-bold mb-4">Related Posts</h2>
@@ -134,22 +126,5 @@ export default function SeoArticle({
         )}
       </main>
     </>
-  );
-}
-
-function FaqItem({ q, a }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border rounded-lg">
-      <button
-        onClick={() => setOpen((s) => !s)}
-        className="w-full text-left px-4 py-3 flex justify-between items-center font-medium"
-        aria-expanded={open}
-      >
-        <span>{q}</span>
-        <span className="ml-3 text-xl">{open ? "−" : "+"}</span>
-      </button>
-      {open && <div className="px-4 py-3 text-gray-700 border-t">{a}</div>}
-    </div>
   );
 }
