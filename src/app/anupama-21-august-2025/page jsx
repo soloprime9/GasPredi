@@ -1,26 +1,15 @@
+// src/app/anupama-21-august-2025/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SeoArticle from "@/Components/SeoArticle";
 import { notFound } from "next/navigation";
 
-// This function tells Next.js which paths to pre-render at build time
-export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "src/app/posts");
-  const filenames = fs.readdirSync(postsDirectory);
-
-  return filenames.map((filename) => ({
-    slug: filename.replace(/\.md$/, ""),
-  }));
-}
-
-export default async function Page({ params }) {
-  const { slug } = params;
-
-  // Use the slug to find the correct markdown file
+export default async function Page() {
+  // Hard-code the filename instead of using a slug
+  const slug = "anupama-21-august-2025";
   const filePath = path.join(process.cwd(), "src/app/posts", `${slug}.md`);
 
-  // This check is a fallback for dynamic routes
   if (!fs.existsSync(filePath)) {
     return notFound();
   }
