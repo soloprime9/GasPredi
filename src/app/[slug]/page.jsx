@@ -1,99 +1,101 @@
-// src/app/[slug]/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { notFound } from "next/navigation";
 import SeoArticle from "@/Components/SeoArticle";
+import { notFound } from "next/navigation";
+import Link from "next/link";
 
-const POSTS_DIR = path.join(process.cwd(), "src", "app", "posts");
-const SITE_URL = "https://todaywrittenupdate.blog";
-
-export async function generateStaticParams() {
-  if (!fs.existsSync(POSTS_DIR)) return [];
-  return fs
-    .readdirSync(POSTS_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => ({ slug: f.replace(/\.md$/, "") }));
-}
-
-export const dynamicParams = false;
-
-function stripFaqFromMarkdown(markdown) {
-  // remove a markdown "## FAQ" section (if present)
-  markdown = markdown.replace(/(^|\n)##\s*FAQ[\s\S]*?(?=\n##\s|\n#\s|$)/i, "\n");
-  // remove any raw <details>...</details> blocks (safety / avoid duplication)
-  markdown = markdown.replace(/<details[\s\S]*?<\/details>/gi, "");
-  return markdown.trim();
-}
-
-export default function Page({ params }) {
+export default async function Page({ params }) {
   const { slug } = params;
-  const filePath = path.join(POSTS_DIR, `${slug}.md`);
+
+  const postsDir = path.join(process.cwd(), "src/app/posts");
+  const filePath = path.join(postsDir, `${slug}.md`);
+
   if (!fs.existsSync(filePath)) return notFound();
 
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data = {}, content = "" } = matter(raw);
-
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
   const stats = fs.statSync(filePath);
   const modifiedDate = stats.mtime.toISOString();
-  const publishDate =
-    data.publishDate && !Number.isNaN(new Date(data.publishDate).getTime())
-      ? new Date(data.publishDate).toISOString()
-      : stats.ctime.toISOString();
 
-  const tags = Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [];
-
-  // Build absolute ogImage (ogImage is the thumbnail)
-  const ogImage =
-    data.ogImage && String(data.ogImage).startsWith("http")
-      ? data.ogImage
-      : data.ogImage
-      ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
-      : `${SITE_URL}/images/default-og.jpg`;
-
-  // Related posts (match on tags)
-  const allFiles = fs.existsSync(POSTS_DIR) ? fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md")) : [];
-  const related = allFiles
-    .filter((f) => f !== `${slug}.md`)
-    .map((f) => {
-      const md = matter(fs.readFileSync(path.join(POSTS_DIR, f), "utf-8"));
-      const d = md.data || {};
-      const t = Array.isArray(d.tags) ? d.tags : d.tags ? [d.tags] : [];
-      const image =
-        d.ogImage && String(d.ogImage).startsWith("http")
-          ? d.ogImage
-          : d.ogImage
-          ? `${SITE_URL}${d.ogImage.startsWith("/") ? "" : "/"}${d.ogImage}`
-          : `${SITE_URL}/images/default-og.jpg`;
+  // Related posts finder
+  const allFiles = fs.readdirSync(postsDir);
+  const relatedPosts = allFiles
+    .filter((file) => file.endsWith(".md") && file !== `${slug}.md`)
+    .map((file) => {
+      const fileData = matter(fs.readFileSync(path.join(postsDir, file), "utf-8")).data;
       return {
-        slug: f.replace(/\.md$/, ""),
-        title: d.title || "",
-        description: d.description || "",
-        tags: t,
-        ogImage: image,
-        publishDate: d.publishDate || "",
+        slug: file.replace(".md", ""),
+        title: fileData.title,
+        ogImage: fileData.ogImage,
+        tags: fileData.tags || [],
       };
     })
-    .filter((p) => p.tags.some((tag) => tags.includes(tag)))
-    .slice(0, 6);
+    .filter((post) =>
+      post.tags.some((tag) => data.tags?.includes(tag))
+    )
+    .slice(0, 4);
 
-  // If frontmatter has faqs, strip any FAQ HTML/markdown from body to avoid double display
-  const cleanedMarkdown = Array.isArray(data.faqs) && data.faqs.length > 0 ? stripFaqFromMarkdown(content) : content;
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      {/* SEO Meta */}
+      <SeoArticle
+        title={data.title}
+        description={data.description}
+        publishDate={data.publishDate}
+        modifiedDate={modifiedDate}
+        tags={data.tags}
+        canonical={data.canonical}
+        ogImage={data.ogImage}
+        markdown={content}
+      />
 
-  const seoProps = {
-    title: data.title || slug,
-    description: data.description || "",
-    publishDate,
-    modifiedDate,
-    tags,
-    canonical: data.canonical || `${SITE_URL}/${slug}`,
-    ogImage,
-    markdown: cleanedMarkdown,
-    faqs: Array.isArray(data.faqs) ? data.faqs : data.faqs ? [data.faqs] : [],
-    relatedPosts: related,
-    author: data.author || { name: "todaywrittenupdate team" },
-  };
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-6 border-b pb-2">Related Posts</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {relatedPosts.map((post, index) => (
+              <Link
+                key={index}
+                href={`/${post.slug}`}
+                className="block bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+              >
+                {post.ogImage && (
+                  <img
+                    src={post.ogImage}
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
+                )}
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold">{post.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
-  return <SeoArticle {...seoProps} />;
-         }
-      
+      {/* FAQ Section */}
+      {data.faq && data.faq.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-6 border-b pb-2">FAQs</h2>
+          <div className="space-y-4">
+            {data.faq.map((item, i) => (
+              <details
+                key={i}
+                className="group border rounded-lg p-4"
+              >
+                <summary className="cursor-pointer font-medium">
+                  {item.question}
+                </summary>
+                <p className="mt-2 text-gray-600">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
