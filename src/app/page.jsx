@@ -81,13 +81,13 @@ export default function Home() {
             <p className="text-gray-700 text-sm mb-3">
               Full written update with latest twists and highlights of today's episode.
             </p>
-            <a https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
+            <a href="https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
           </li>
           <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
             <img src="/images/post2.jpg" alt="Anupamaa Update" className="rounded-lg mb-3" />
             <h3 className="text-lg font-bold mb-2">Anupamaa - Today's Episode Written Update</h3>
             <p className="text-gray-700 text-sm mb-3">Complete episode summary with spoilers and upcoming twists.</p>
-            <a https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
+            <a href="https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
           </li>
         </ul>
       </section>
