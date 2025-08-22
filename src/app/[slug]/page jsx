@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import SeoArticle from "@/Components/SeoArticle";
 import { notFound } from "next/navigation";
 
-// Function to generate static paths at build time
+// This function tells Next.js which paths to pre-render at build time
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "src/app/posts");
   const filenames = fs.readdirSync(postsDirectory);
@@ -17,8 +17,10 @@ export async function generateStaticParams() {
 export default async function Page({ params }) {
   const { slug } = params;
 
+  // Use the slug to find the correct markdown file
   const filePath = path.join(process.cwd(), "src/app/posts", `${slug}.md`);
 
+  // This check is a fallback for dynamic routes
   if (!fs.existsSync(filePath)) {
     return notFound();
   }
