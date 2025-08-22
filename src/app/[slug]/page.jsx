@@ -1,4 +1,3 @@
-// src/app/[slug]/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -17,6 +16,46 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+// ✅ SEO Metadata Server-Side
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const filePath = path.join(POSTS_DIR, `${slug}.md`);
+  if (!fs.existsSync(filePath)) return {};
+
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data = {} } = matter(raw);
+
+  const ogImage =
+    data.ogImage && String(data.ogImage).startsWith("http")
+      ? data.ogImage
+      : data.ogImage
+      ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
+      : `${SITE_URL}/images/default-og.jpg`;
+
+  return {
+    title: `${data.title || slug} | todaywrittenupdate`,
+    description: data.description || "",
+    keywords: Array.isArray(data.tags) ? data.tags.join(", ") : data.tags || "",
+    alternates: {
+      canonical: data.canonical || `${SITE_URL}/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      siteName: "todaywrittenupdate",
+      title: data.title || slug,
+      description: data.description || "",
+      url: data.canonical || `${SITE_URL}/${slug}`,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data.title || slug,
+      description: data.description || "",
+      images: [ogImage],
+    },
+  };
+}
 
 export default function Page({ params }) {
   const { slug } = params;
@@ -42,7 +81,7 @@ export default function Page({ params }) {
       ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
       : `${SITE_URL}/images/default-og.jpg`;
 
-  // Related posts: other files that share tags
+  // Related posts
   const allFiles = fs.existsSync(POSTS_DIR)
     ? fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"))
     : [];
@@ -87,4 +126,4 @@ export default function Page({ params }) {
   };
 
   return <SeoArticle {...props} />;
-    }
+}
