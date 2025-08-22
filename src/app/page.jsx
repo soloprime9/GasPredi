@@ -16,7 +16,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://todaywrittenupdate.blog/images/og-image.jpg",
+        url: "https://todaywrittenupdate.blog/Today.png",
         width: 1200,
         height: 630,
         alt: "Today Written Update - Indian TV Serials",
@@ -28,7 +28,7 @@ export const metadata = {
     title: "Today Written Update",
     description:
       "Get daily written updates, spoilers, anupama, Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru,and twists from top Indian TV serials.",
-    images: ["https://todaywrittenupdate.blog/images/og-image.jpg"],
+    images: ["https://todaywrittenupdate.blog/Today.png"],
   },
 };
 
@@ -45,7 +45,7 @@ export default function Home() {
       "name": "Today Written Update",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://todaywrittenupdate.blog/images/logo.png"
+        "url": "https://todaywrittenupdate.blog/Today.png"
       }
     },
     "author": {
