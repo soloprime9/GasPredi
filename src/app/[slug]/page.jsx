@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
-import SeoArticle from "@/components/SeoArticle";
+import SeoArticle from "@/Components/SeoArticle";
 
 const POSTS_DIR = path.join(process.cwd(), "src", "app", "posts");
 const SITE_URL = "https://todaywrittenupdate.blog";
