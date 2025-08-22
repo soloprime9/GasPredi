@@ -2,15 +2,15 @@
 export const metadata = {
   title: "Today Written Update",
   description:
-    "Stay updated with daily written updates, spoilers, and upcoming twists from popular Indian TV serials including Yeh Rishta Kya Kehlata Hai, Anupamaa, BhagyaLakshmi, Ghum Hai Kisikey Pyaar Mein, and more.",
+    "Welcome to my Today Written Update platform, Stay updated with daily written updates, spoilers, and upcoming twists from popular Indian TV serials including Yeh Rishta Kya Kehlata Hai, Anupamaa, BhagyaLakshmi, Ghum Hai Kisikey Pyaar Mein, Written Update,Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru, Kumkum Bhagya, Kundali Bhagya, Today Written Update and more.",
   keywords:
-    "Indian TV serials, written updates, daily episode updates, spoilers, twists, Yeh Rishta Kya Kehlata Hai, Anupamaa, BhagyaLakshmi, Ghum Hai Kisikey Pyaar Mein, TV news, TV gossip",
+    "Indian TV serials, written updates, daily episode updates, spoilers, twists, Yeh Rishta Kya Kehlata Hai, Anupamaa, BhagyaLakshmi, Ghum Hai Kisikey Pyaar Mein, TV news, TV gossip, Anupama written update, Yeh Rishta Kya Kehlata Hai Dailymotion, Dailymotion, today full episode, Tum se Tum Tak, Vashudha, Saru, Mangal Lakshmi, Bhagya Lakshmi Today Written Update, Written Update, Tellyexpres, Telly update, Disney Jiohotstar",
   authors: [{ name: "Today Written Update" }],
   robots: "index, follow",
   openGraph: {
     title: "Today Written Update",
     description:
-      "Daily written updates, episode summaries, spoilers, and twists from your favorite Indian TV serials.",
+      "Daily written updates, episode summaries, spoilers, Anupama , Yeh Rishta Kya Kehlata Hai, Ghum Hai Kiskey Pyar Mein, Tum Se Tumm Tak, Vashudha, Saru, Kundali Bhagya, Kumkum Bhagya, Bhagya Lakshmi,and twists from your favorite Indian TV serials.",
     url: "https://todaywrittenupdate.blog",
     siteName: "Today Written Update",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Today Written Update",
     description:
-      "Get daily written updates, spoilers, and twists from top Indian TV serials.",
+      "Get daily written updates, spoilers, anupama, Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru,and twists from top Indian TV serials.",
     images: ["https://todaywrittenupdate.blog/images/og-image.jpg"],
   },
 };
@@ -39,7 +39,7 @@ export default function Home() {
     "name": "Today Written Update",
     "url": "https://todaywrittenupdate.blog",
     "description":
-      "Stay updated with daily written updates, spoilers, and upcoming twists from popular Indian TV serials.",
+      "Get daily written updates, spoilers, anupama, Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru,and twists from top Indian TV serials.",
     "publisher": {
       "@type": "Organization",
       "name": "Today Written Update",
@@ -81,13 +81,13 @@ export default function Home() {
             <p className="text-gray-700 text-sm mb-3">
               Full written update with latest twists and highlights of today's episode.
             </p>
-            <a href="/posts/yeh-rishta-today-update" className="text-blue-500 hover:underline">Read More →</a>
+            <a https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
           </li>
           <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
             <img src="/images/post2.jpg" alt="Anupamaa Update" className="rounded-lg mb-3" />
             <h3 className="text-lg font-bold mb-2">Anupamaa - Today's Episode Written Update</h3>
             <p className="text-gray-700 text-sm mb-3">Complete episode summary with spoilers and upcoming twists.</p>
-            <a href="/posts/anupamaa-latest-update" className="text-blue-500 hover:underline">Read More →</a>
+            <a https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
           </li>
         </ul>
       </section>
