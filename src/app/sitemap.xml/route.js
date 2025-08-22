@@ -16,6 +16,7 @@ export async function GET() {
     const lastmod = stats.mtime.toISOString();
     return `
   <url>
+    <loc>${SITE_URL}</loc>
     <loc>${SITE_URL}/${slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>daily</changefreq>
