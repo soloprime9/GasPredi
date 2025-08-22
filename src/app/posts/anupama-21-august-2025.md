@@ -7,7 +7,7 @@ tags:
   - "Anupama 10 April 2025"
   - "Star Plus"
 canonical: "https://todaywrittenupdate.blog/anupama-10-april-2025-written-update"
-ogImage: "/images/anupama-10-april-2025.jpg"
+ogImage: "/images/FB_IMG_1755854182542.jpg"
 author:
   name: "todaywrittenupdate team"
 faqs:
