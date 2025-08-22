@@ -1,44 +1,52 @@
+// src/app/[slug]/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SeoArticle from "@/Components/SeoArticle";
 import { notFound } from "next/navigation";
 
-const postsDir = path.join(process.cwd(), "src/app/posts");
+const postsDir = path.join(process.cwd(), "src", "app", "posts");
 
-// Generate all possible slugs for static build
+// Build-time: generate all available slugs
 export async function generateStaticParams() {
-  const files = fs.readdirSync(postsDir);
-  return files
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => ({
-      slug: file.replace(".md", ""),
-    }));
+  if (!fs.existsSync(postsDir)) return [];
+  const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
+  return files.map((file) => ({ slug: file.replace(/\.md$/, "") }));
 }
+
+// Prevent dynamic fallbacks for unknown slugs (unknown => 404)
+export const dynamicParams = false;
 
 export default function Page({ params }) {
   const { slug } = params;
   const filePath = path.join(postsDir, `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {
+    // Next.js will render a 404 page
     notFound();
   }
 
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(fileContent);
+  const { data = {}, content = "" } = matter(fileContent);
 
   const stats = fs.statSync(filePath);
   const modifiedDate = stats.mtime.toISOString();
 
+  // Ensure publishDate is a valid ISO string; fall back to file ctime if missing
+  const publishDate =
+    data.publishDate && !Number.isNaN(new Date(data.publishDate).getTime())
+      ? new Date(data.publishDate).toISOString()
+      : stats.ctime.toISOString();
+
   return (
     <SeoArticle
-      title={data.title}
-      description={data.description}
-      publishDate={data.publishDate}
+      title={data.title || slug}
+      description={data.description || ""}
+      publishDate={publishDate}
       modifiedDate={modifiedDate}
-      tags={data.tags}
-      canonical={data.canonical}
-      ogImage={data.ogImage}
+      tags={Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : []}
+      canonical={data.canonical || `https://todaywrittenupdate.blog/${slug}`}
+      ogImage={data.ogImage || "/images/default-og.jpg"}
       markdown={content}
     />
   );
