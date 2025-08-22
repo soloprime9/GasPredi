@@ -21,13 +21,6 @@ faqs:
 
 # Anupama 10 April 2025 Written Update: Will Khyati Reveal the Truth?
 
-## Table of contents
-- [Episode Summary](#episode-summary)
-- [Key Highlights](#key-highlights)
-- [Short Recap](#short-recap)
-- [FAQ](#faq)
-- [Sources](#sources)
-
 ---
 
 ## Episode Summary
@@ -51,22 +44,13 @@ Anupama supports Khyati and asks her to reflect on the right path. Raghav's visi
 
 ---
 
-## FAQ
-
 <!-- FAQ will be rendered from frontmatter; keep this area intentionally short -->
 
 ---
 
 ## Sources
 
-- https://www.hotstar.com/in  
-- https://www.iwmbuzz.com/television/written-updates
----
----
-
-## Sources
-
 - [Disney+ Hotstar](https://www.hotstar.com/in)  
-- [IWMBuzz — Written Updates](https://www.iwmbuzz.com/television/written-updates)
+- [IWMBuzz — Written Updates](https://www.iwmbuzz.com/)
 
 ---
