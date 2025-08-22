@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import MarkdownRenderer from "@/components/MarkdownRenderer"; // keep your renderer
+import MarkdownRenderer from "@/Components/MarkdownRenderer"; // keep your renderer
 
 function formatHuman(iso) {
   try {
