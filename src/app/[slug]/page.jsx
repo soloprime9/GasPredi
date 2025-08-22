@@ -1,10 +1,9 @@
-// src/app/[slug]/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import SeoArticle from "@/Components/SeoArticle";
- 
+
 const POSTS_DIR = path.join(process.cwd(), "src", "app", "posts");
 const SITE_URL = "https://todaywrittenupdate.blog";
 
@@ -35,7 +34,6 @@ export default function Page({ params }) {
 
   const tags = Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [];
 
-  // Build absolute ogImage (ogImage is the thumbnail)
   const ogImage =
     data.ogImage && String(data.ogImage).startsWith("http")
       ? data.ogImage
@@ -43,16 +41,15 @@ export default function Page({ params }) {
       ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
       : `${SITE_URL}/images/default-og.jpg`;
 
-  // Related posts - match on tags, include ogImage absolute
-  const allFiles =
-    fs.existsSync(POSTS_DIR) ? fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md")) : [];
+  // Related posts
+  const allFiles = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
   const related = allFiles
     .filter((f) => f !== `${slug}.md`)
     .map((f) => {
       const md = matter(fs.readFileSync(path.join(POSTS_DIR, f), "utf-8"));
       const d = md.data || {};
       const t = Array.isArray(d.tags) ? d.tags : d.tags ? [d.tags] : [];
-      const og =
+      const image =
         d.ogImage && String(d.ogImage).startsWith("http")
           ? d.ogImage
           : d.ogImage
@@ -60,28 +57,28 @@ export default function Page({ params }) {
           : `${SITE_URL}/images/default-og.jpg`;
       return {
         slug: f.replace(/\.md$/, ""),
-        title: d.title || f.replace(/\.md$/, ""),
+        title: d.title || "",
         description: d.description || "",
         tags: t,
-        ogImage: og,
-        publishDate: d.publishDate || null,
+        ogImage: image,
+        publishDate: d.publishDate || "",
       };
     })
     .filter((p) => p.tags.some((tag) => tags.includes(tag)))
     .slice(0, 6);
 
-  const seoProps = {
-    title: data.title || slug,
-    description: data.description || "",
-    publishDate,
-    modifiedDate,
-    tags,
-    canonical: data.canonical || `${SITE_URL}/${slug}`,
-    ogImage,
-    markdown: content,
-    faqs: Array.isArray(data.faqs) ? data.faqs : data.faqs ? [data.faqs] : [],
-    relatedPosts: related,
-  };
-
-  return <SeoArticle {...seoProps} />;
+  return (
+    <SeoArticle
+      title={data.title || slug}
+      description={data.description || ""}
+      publishDate={publishDate}
+      modifiedDate={modifiedDate}
+      tags={tags}
+      canonical={data.canonical || `${SITE_URL}/${slug}`}
+      ogImage={ogImage}
+      markdown={content}
+      faqs={data.faqs || []}
+      relatedPosts={related}
+    />
+  );
 }
