@@ -4,7 +4,7 @@ description: "Today’s Anupama episode brings unexpected drama as Khyati faces 
 publishDate: "2025-08-21T08:00:00+05:30"
 tags: ["Anupama Written Update", "Anupama 21 August 2025"]
 canonical: "https://yoursite.com/anupama-21-august-2025"
-ogImage: "/images/anupama-21-august-2025.jpg"
+ogImage: "https://www.fondpeace.com/Fondpeace.jpg"
 ---
 
 # Anupama 21 August 2025 Written Update
