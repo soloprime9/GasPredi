@@ -1,3 +1,4 @@
+// src/app/[slug]/page.jsx
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -17,6 +18,14 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+function stripFaqFromMarkdown(markdown) {
+  // remove a markdown "## FAQ" section (if present)
+  markdown = markdown.replace(/(^|\n)##\s*FAQ[\s\S]*?(?=\n##\s|\n#\s|$)/i, "\n");
+  // remove any raw <details>...</details> blocks (safety / avoid duplication)
+  markdown = markdown.replace(/<details[\s\S]*?<\/details>/gi, "");
+  return markdown.trim();
+}
+
 export default function Page({ params }) {
   const { slug } = params;
   const filePath = path.join(POSTS_DIR, `${slug}.md`);
@@ -34,6 +43,7 @@ export default function Page({ params }) {
 
   const tags = Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [];
 
+  // Build absolute ogImage (ogImage is the thumbnail)
   const ogImage =
     data.ogImage && String(data.ogImage).startsWith("http")
       ? data.ogImage
@@ -41,8 +51,8 @@ export default function Page({ params }) {
       ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
       : `${SITE_URL}/images/default-og.jpg`;
 
-  // Related posts
-  const allFiles = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
+  // Related posts (match on tags)
+  const allFiles = fs.existsSync(POSTS_DIR) ? fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md")) : [];
   const related = allFiles
     .filter((f) => f !== `${slug}.md`)
     .map((f) => {
@@ -67,18 +77,23 @@ export default function Page({ params }) {
     .filter((p) => p.tags.some((tag) => tags.includes(tag)))
     .slice(0, 6);
 
-  return (
-    <SeoArticle
-      title={data.title || slug}
-      description={data.description || ""}
-      publishDate={publishDate}
-      modifiedDate={modifiedDate}
-      tags={tags}
-      canonical={data.canonical || `${SITE_URL}/${slug}`}
-      ogImage={ogImage}
-      markdown={content}
-      faqs={data.faqs || []}
-      relatedPosts={related}
-    />
-  );
-}
+  // If frontmatter has faqs, strip any FAQ HTML/markdown from body to avoid double display
+  const cleanedMarkdown = Array.isArray(data.faqs) && data.faqs.length > 0 ? stripFaqFromMarkdown(content) : content;
+
+  const seoProps = {
+    title: data.title || slug,
+    description: data.description || "",
+    publishDate,
+    modifiedDate,
+    tags,
+    canonical: data.canonical || `${SITE_URL}/${slug}`,
+    ogImage,
+    markdown: cleanedMarkdown,
+    faqs: Array.isArray(data.faqs) ? data.faqs : data.faqs ? [data.faqs] : [],
+    relatedPosts: related,
+    author: data.author || { name: "todaywrittenupdate team" },
+  };
+
+  return <SeoArticle {...seoProps} />;
+         }
+      
