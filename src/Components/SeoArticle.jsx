@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import MarkdownRenderer from "@/Components/MarkdownRenderer";
-import FaqItem from "./FaqItem"; // Client component for FAQ toggle
-
+import FaqItem from "@/Components/FaqItem"; // Client component for FAQ toggle
+ 
 function formatHuman(iso) {
   try {
     return new Date(iso).toLocaleDateString("en-IN", {
