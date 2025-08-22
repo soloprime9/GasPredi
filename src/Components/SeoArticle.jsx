@@ -1,10 +1,9 @@
-// src/Components/SeoArticle.jsx
+// src/components/SeoArticle.jsx
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import MarkdownRenderer from "@/Components/MarkdownRenderer";
-import styles from "./SeoArticle.module.css";
 
 function formatHuman(iso) {
   try {
@@ -31,22 +30,7 @@ export default function SeoArticle({
   relatedPosts = [],
   author = { name: "todaywrittenupdate team" },
 }) {
-  const contentRef = useRef(null);
-  const [toc, setToc] = useState([]);
-
-  useEffect(() => {
-    // Build TOC from rendered headings (h2/h3)
-    if (!contentRef.current) return;
-    const headings = Array.from(contentRef.current.querySelectorAll("h2, h3"));
-    const items = headings.map((h) => ({
-      id: h.id || h.textContent.toLowerCase().trim().replace(/[^\w\- ]+/g, "").replace(/\s+/g, "-"),
-      text: h.textContent,
-      level: h.tagName === "H2" ? 2 : 3,
-    }));
-    setToc(items);
-  }, [markdown]);
-
-  // JSON-LD (Article + Breadcrumb + FAQ if present)
+  // Article JSON-LD
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -66,36 +50,12 @@ export default function SeoArticle({
     articleSection: "TV Recap",
   };
 
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://todaywrittenupdate.blog/" },
-      { "@type": "ListItem", position: 2, name: "Written Updates", item: "https://todaywrittenupdate.blog/written-updates" },
-      { "@type": "ListItem", position: 3, name: title, item: canonical },
-    ],
-  };
-
-  const faqLd =
-    faqs && faqs.length
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }
-      : null;
-
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>{title} | todaywrittenupdate</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={Array.isArray(tags) ? tags.join(", ") : tags} />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href={canonical} />
 
         {/* Open Graph */}
@@ -116,85 +76,77 @@ export default function SeoArticle({
 
         {/* JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-        {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
       </Head>
 
-      <article className={styles.article}>
-        <header className={styles.header}>
-          {ogImage && <img src={ogImage} alt={title} className={styles.thumbnail} />}
-          <h1 className={styles.title}>{title}</h1>
-          <div className={styles.meta}>
-            By <strong>{author.name || "todaywrittenupdate team"}</strong> • Published: {formatHuman(publishDate)} • Updated: {formatHuman(modifiedDate)}
+      <main className="mx-auto max-w-4xl px-4 py-8">
+        <header className="mb-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
+          <div className="mt-2 text-sm text-gray-600">
+            By <strong>{author.name}</strong> • Published: {formatHuman(publishDate)} • Updated: {formatHuman(modifiedDate)}
           </div>
         </header>
 
-        <div className={styles.topRow}>
-          {/* TOC */}
-          {toc.length > 0 && (
-            <nav className={styles.toc}>
-              <div className={styles.tocTitle}>On this page</div>
-              <ul>
-                {toc.map((item) => (
-                  <li key={item.id} className={item.level === 3 ? styles.tocSub : ""}>
-                    <a href={`#${item.id}`}>{item.text}</a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-
-          {/* Content */}
-          <div className={styles.content} ref={contentRef}>
-            <MarkdownRenderer content={markdown} />
+        {/* Thumbnail */}
+        {ogImage && (
+          <div className="mb-6">
+            <img src={ogImage} alt={title} className="w-full rounded-lg shadow-sm object-cover max-h-[520px]" />
           </div>
-        </div>
+        )}
 
-        {/* FAQ (rendered once, accordion-style) */}
-        {faqs && faqs.length > 0 && (
-          <section className={styles.faqSection}>
-            <h2>Frequently Asked Questions</h2>
-            <div className={styles.faqList}>
-              {faqs.map((f, i) => (
-                <FaqItem key={i} q={f.q} a={f.a} />
+        {/* Markdown content */}
+        <article className="prose prose-lg max-w-none">
+          <MarkdownRenderer content={markdown} />
+        </article>
+
+        {/* FAQ */}
+        {faqs.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {faqs.map((f, idx) => (
+                <FaqItem key={idx} q={f.q} a={f.a} />
               ))}
             </div>
           </section>
         )}
 
-        {/* Related posts (small cards) */}
-        {relatedPosts && relatedPosts.length > 0 && (
-          <section className={styles.related}>
-            <h2>Related posts</h2>
-            <div className={styles.relatedGrid}>
+        {/* Related posts (below FAQ) */}
+        {relatedPosts.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold mb-4">Related Posts</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map((p) => (
-                <Link key={p.slug} href={`/${p.slug}`} className={styles.card}>
-                  <div className={styles.cardImgWrap}>
-                    <img src={p.ogImage} alt={p.title} />
+                <Link key={p.slug} href={`/${p.slug}`} className="block border rounded-lg overflow-hidden hover:shadow-lg transition">
+                  <div className="w-full h-40 bg-gray-100">
+                    <img src={p.ogImage} alt={p.title} className="w-full h-full object-cover" />
                   </div>
-                  <div className={styles.cardBody}>
-                    <h3>{p.title}</h3>
-                    <p className={styles.cardDesc}>{p.description}</p>
+                  <div className="p-3">
+                    <h3 className="font-semibold text-lg">{p.title}</h3>
+                    {p.description && <p className="text-sm text-gray-600 mt-1 line-clamp-2">{p.description}</p>}
                   </div>
                 </Link>
               ))}
             </div>
           </section>
         )}
-      </article>
-    </div>
+      </main>
+    </>
   );
 }
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={styles.faqItem}>
-      <button onClick={() => setOpen((s) => !s)} className={styles.faqQuestion} aria-expanded={open}>
-        {q}
-        <span className={styles.faqToggle}>{open ? "−" : "+"}</span>
+    <div className="border rounded-lg">
+      <button
+        onClick={() => setOpen((s) => !s)}
+        className="w-full text-left px-4 py-3 flex justify-between items-center font-medium"
+        aria-expanded={open}
+      >
+        <span>{q}</span>
+        <span className="ml-3 text-xl">{open ? "−" : "+"}</span>
       </button>
-      {open && <div className={styles.faqAnswer}>{a}</div>}
+      {open && <div className="px-4 py-3 text-gray-700 border-t">{a}</div>}
     </div>
   );
-        }
+}
