@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://todaywrittenupdate.blog/sitemap.xml
+Host: https://todaywrittenupdate.blog
