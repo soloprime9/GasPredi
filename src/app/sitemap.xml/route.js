@@ -17,6 +17,12 @@ export async function GET() {
     return `
   <url>
     <loc>${SITE_URL}</loc>
+    <loc>${SITE_URL}/about-us</loc>
+    <loc>${SITE_URL}/contact-us</loc>
+    <loc>${SITE_URL}/privacy-policy</loc>
+    <loc>${SITE_URL}/DMCA</loc>
+    <loc>${SITE_URL}/terms</loc>
+    <loc>${SITE_URL}/disclaimer</loc>
     <loc>${SITE_URL}/${slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>daily</changefreq>
