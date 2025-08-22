@@ -1,7 +1,7 @@
 ---
 title: "Anupama 23th August 2025 Written Update: Anupama's dress catches fire"
 description: "Today Written update of Anupama (23th August 2025): Anupama's dress catches fire, will Rahi save Anupama."
-publishDate: "2025-08-23T09:30:00+05:30"
+publishDate: "2025-08-22T09:30:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 23th August 2025"
