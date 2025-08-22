@@ -80,18 +80,21 @@ export default function SeoArticle({
 
       <main className="mx-auto max-w-4xl px-4 py-8">
         <header className="mb-6 text-center">
+
+          {/* Thumbnail */}
+        {ogImage && (
+          <div className="mb-6">
+            <img src={ogImage} alt={title} className="w-full rounded-lg shadow-sm object-cover max-h-[520px]" />
+          </div>
+        )}
+          
           <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
           <div className="mt-2 text-sm text-gray-600">
             By <strong>{author.name}</strong> • Published: {formatHuman(publishDate)} • Updated: {formatHuman(modifiedDate)}
           </div>
         </header>
 
-        {/* Thumbnail */}
-        {ogImage && (
-          <div className="mb-6">
-            <img src={ogImage} alt={title} className="w-full rounded-lg shadow-sm object-cover max-h-[520px]" />
-          </div>
-        )}
+        
 
         {/* Markdown content */}
         <article className="prose prose-lg max-w-none">
