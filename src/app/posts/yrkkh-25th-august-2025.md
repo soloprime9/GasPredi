@@ -1,4 +1,3 @@
-
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 25th August 2025 Written Update, Anshuman Dead"
 description: "Today Written update of YRKKH (25th August 2025): Abhira arrested to killing Anshuman case. Now Abhira in trouble."
@@ -20,8 +19,7 @@ faqs:
     a: "Disney+ Hotstar (India). Watch More Serials On this Plateform"
 ---
 
-# Anupama 23th August 2025 Written Update: Anupama's dress catches fire
-
+# Yeh Rishta Kya Kehlata Hai 25th August 2025 Written Update, Anshuman Dead
 ---
 
 ## Episode Summary
