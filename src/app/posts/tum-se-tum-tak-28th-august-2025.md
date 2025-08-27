@@ -39,6 +39,7 @@ Now anu is ignoring to Arya, Arya is happy with Anu confidence to present a good
 ## Next Episode Update
 
 In upcoming episode we will Going to se rhat Anu is ignoring to Arya, he want to talk to Anu but not this is possible, so now in upcoming episode we wanna show a beautiful love story between Anu and Arya. For the latest updates you can connect with us on [Today Written Update](https://www.todaywrittenupdate.blog/).
+
 ---
 
 <!-- FAQ will be rendered from frontmatter; keep this area intentionally short -->
