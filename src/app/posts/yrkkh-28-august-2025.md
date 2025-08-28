@@ -1,19 +1,19 @@
 --- 
-title: "Yeh Rishta Kya Kehlata Hai 28 August 2025 written update, Abhira tells truth to Arman "
-description: "Today Written update of YRKKH (28th August 2025): police arrested Abhira, Arman help abhira, she tells truth to Arman."
-publishDate: "2025-08-27T09:30:00+05:30"
+title: "Yeh Rishta Kya Kehlata Hai 29 August 2025 written update, Abhira tells truth to Arman "
+description: "Today Written update of YRKKH (29th August 2025): police arrested Abhira, Arman help abhira, she tells truth to Arman."
+publishDate: "2025-08-28T09:30:00+05:30"
 tags:
   - "Anupama written update"
-  - "Anupama 23th August 2025"
+  - "Anupama 28th August 2025"
   - "Star Plus"
-canonical: "https://todaywrittenupdate.blog/yrkkh-28-august-2025"
+canonical: "https://todaywrittenupdate.blog/yrkkh-29-august-2025"
 ogImage: "/Images/Yrkkh.jpg"
 author:
   name: "todaywrittenupdate team"
 
 ---
 
-# Yeh Rishta Kya Kehlata Hai 28 August 2025 written update, Abhira tells truth to Arman 
+# Yeh Rishta Kya Kehlata Hai 29 August 2025 written update, Abhira tells truth to Arman 
 ---
 
 ## Episode Summary
