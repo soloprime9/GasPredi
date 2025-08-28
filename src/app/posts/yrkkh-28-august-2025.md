@@ -6,7 +6,7 @@ tags:
   - "Anupama written update"
   - "Anupama 28th August 2025"
   - "Star Plus"
-canonical: "https://todaywrittenupdate.blog/yeh-rishta-kya-kehlata-hai-28-august-2025"
+canonical: "https://todaywrittenupdate.blog/yrkkh-28-august-2025"
 ogImage: "/Images/Yrkkh.jpg"
 author:
   name: "todaywrittenupdate team"
