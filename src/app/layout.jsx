@@ -26,16 +26,12 @@ export default function RootLayout({ children }) {
 
 
         {/* H1 */}
-      <h1 className="text-3xl font-bold text-center mb-6">Today Written Update</h1>
+      <h1 className="text-3xl font-bold text-center mb-6"><a href="/category/written-updates" className="text-blue-600 ">
+          Today Written Update
+        </a></h1>
       
 
-      {/* Categories */}
-      <nav className="flex gap-6 justify-center mb-10">
-        <a href="/category/written-updates" className="text-blue-600 hover:underline">
-          Written Updates
-        </a>
-        
-      </nav>
+      
 
         
         {children}
