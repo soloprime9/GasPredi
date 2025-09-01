@@ -1,4 +1,14 @@
-// app/page.jsx 
+// app/page.jsx
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Link from "next/link";
+
+// 📂 Path to posts folder
+const POSTS_DIR = path.join(process.cwd(), "src", "app", "posts");
+const SITE_URL = "https://todaywrittenupdate.blog";
+
+// ✅ SEO & Social Metadata
 export const metadata = {
   title: "Today Written Update",
   description:
@@ -11,12 +21,12 @@ export const metadata = {
     title: "Today Written Update",
     description:
       "Daily written updates, episode summaries, spoilers, Anupama , Yeh Rishta Kya Kehlata Hai, Ghum Hai Kiskey Pyar Mein, Tum Se Tumm Tak, Vashudha, Saru, Kundali Bhagya, Kumkum Bhagya, Bhagya Lakshmi,and twists from your favorite Indian TV serials.",
-    url: "https://todaywrittenupdate.blog",
+    url: SITE_URL,
     siteName: "Today Written Update",
     type: "website",
     images: [
       {
-        url: "https://todaywrittenupdate.blog/Today.jpg",
+        url: `${SITE_URL}/Today.jpg`,
         width: 1200,
         height: 630,
         alt: "Today Written Update - Indian TV Serials",
@@ -28,68 +38,117 @@ export const metadata = {
     title: "Today Written Update",
     description:
       "Get daily written updates, spoilers, anupama, Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru,and twists from top Indian TV serials.",
-    images: ["https://todaywrittenupdate.blog/Today.jpg"],
+    images: [`${SITE_URL}/Today.jpg`],
   },
 };
 
 export default function Home() {
+  // 📌 Structured Data (JSON-LD) for SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Today Written Update",
-    "url": "https://todaywrittenupdate.blog",
-    "description":
+    name: "Today Written Update",
+    url: SITE_URL,
+    description:
       "Get daily written updates, spoilers, anupama, Yeh Rishta Kya Kehlata Hai, Tum Se Tumm Tak, Vashudha, Saru,and twists from top Indian TV serials.",
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Today Written Update",
-      "logo": {
+      name: "Today Written Update",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://todaywrittenupdate.blog/Today.png"
-      }
+        url: `${SITE_URL}/Today.png`,
+      },
     },
-    "author": {
+    author: {
       "@type": "Person",
-      "name": "Today Written Update"
-    }
+      name: "Today Written Update",
+    },
   };
 
+  // ✅ Get latest posts
+  let posts = [];
+  if (fs.existsSync(POSTS_DIR)) {
+    posts = fs
+      .readdirSync(POSTS_DIR)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => {
+        const raw = fs.readFileSync(path.join(POSTS_DIR, f), "utf-8");
+        const { data } = matter(raw);
+        const stats = fs.statSync(path.join(POSTS_DIR, f));
+        const publishDate =
+          data.publishDate && !Number.isNaN(new Date(data.publishDate).getTime())
+            ? new Date(data.publishDate)
+            : stats.ctime;
+
+        const ogImage =
+          data.ogImage && String(data.ogImage).startsWith("http")
+            ? data.ogImage
+            : data.ogImage
+            ? `${SITE_URL}${data.ogImage.startsWith("/") ? "" : "/"}${data.ogImage}`
+            : `${SITE_URL}/images/default-og.jpg`;
+
+        return {
+          slug: f.replace(/\.md$/, ""),
+          title: data.title || f.replace(/\.md$/, ""),
+          description: data.description || "",
+          publishDate,
+          ogImage,
+        };
+      })
+      .sort((a, b) => b.publishDate - a.publishDate) // latest first
+      .slice(0, 10); // only latest 10
+  }
+
   return (
-    <main className="max-w-5xl mx-auto p-4">
+    <main className="max-w-7xl mx-auto p-4">
       {/* JSON-LD Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* H1 */}
       <h1 className="text-3xl font-bold text-center mb-6">Today Written Update</h1>
-      
 
       {/* Categories */}
       <nav className="flex gap-6 justify-center mb-10">
         <a href="/category/written-updates" className="text-blue-600 hover:underline">
           Written Updates
         </a>
-        
       </nav>
 
       {/* Latest Posts */}
       <section>
         <h2 className="text-2xl font-semibold mb-4">Latest Posts</h2>
-        <ul className="grid gap-6 md:grid-cols-2">
-          <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
-            <img src="/images/post1.jpg" alt="Yeh Rishta Update" className="rounded-lg mb-3" />
-            <h3 className="text-lg font-bold mb-2">Yeh Rishta Kya Kehlata Hai - Today's Episode Summary</h3>
-            <p className="text-gray-700 text-sm mb-3">
-              Full written update with latest twists and highlights of today's episode.
-            </p>
-            <a href="https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
-          </li>
-          <li className="border rounded-lg p-4 shadow hover:shadow-md transition">
-            <img src="/images/post2.jpg" alt="Anupamaa Update" className="rounded-lg mb-3" />
-            <h3 className="text-lg font-bold mb-2">Anupamaa - Today's Episode Written Update</h3>
-            <p className="text-gray-700 text-sm mb-3">Complete episode summary with spoilers and upcoming twists.</p>
-            <a href="https://todaywrittenupdate.blog/anupama-21-august-2025" className="text-blue-500 hover:underline">Read More →</a>
-          </li>
-        </ul>
+        {posts.length === 0 ? (
+          <p className="text-center text-gray-500">No posts found.</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${post.slug}`}
+                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              >
+                <img
+                  src={post.ogImage}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                  loading="lazy"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-bold">{post.title}</h3>
+                  <p className="text-gray-700 text-sm mt-2 line-clamp-2">
+                    {post.description}
+                  </p>
+                  <p className="text-gray-400 text-xs mt-3">
+                    {post.publishDate.toLocaleDateString()}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Footer */}
