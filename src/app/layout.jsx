@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 
 
         {/* H1 */}
-      <h1 className="text-3xl font-bold text-center mb-6"><a href="/category/written-updates" className="text-blue-600 ">
+      <h1 className="text-3xl font-bold text-center mb-6"><a href="/" className="text-blue-600 ">
           Today Written Update
         </a></h1>
       
