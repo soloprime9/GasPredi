@@ -44,6 +44,7 @@ author:
 - [Disney+ Hotstar](https://www.hotstar.com/in)  
 - [IWMBuzz — Written Updates](https://www.iwmbuzz.com/)
 - [Telly Update](https://www.tellyupdate.com)
-- [Zee TV](https://www.zee5.com/)  
+- [Zee TV](https://www.zee5.com/)
+- [FondPeace.com](https://www.fondpeace.com/)
 
 ---
