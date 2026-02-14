@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 15th February 2026 Written Update: Who will help Myra?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (15th February 2026): Who will help Myra? Myra wonder why her own mother not with her."
-publishDate: "2026-02-14T18:20:00+05:30"
+publishDate: "2026-02-14T16:20:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 15th February 2026"
