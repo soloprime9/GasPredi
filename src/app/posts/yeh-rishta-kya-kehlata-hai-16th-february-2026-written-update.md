@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 16th February 2026 Written Update: Will Armaan Save Abhira?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (16th February 2026): Will Armaan Save Abhira? Some goons trouble Abhira. Myra will choose Armaan over Abhira"
-publishDate: "2026-02-14T16:20:00+05:30"
+publishDate: "2026-02-15T16:20:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 16th February 2026"
