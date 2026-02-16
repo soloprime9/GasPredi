@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 17th February 2026 Written Update: Will Vidya succeed in keeping Armaan and Abhira separate?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (17th February 2026): Will Vidya succeed in keeping Armaan and Abhira separate? Some goons trouble Abhira. Arman angry with his family to don't care of Myra"
-publishDate: "2026-02-15T01:00:00+05:30"
+publishDate: "2026-02-17T02:00:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 17th February 2026"
