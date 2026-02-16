@@ -18,7 +18,7 @@ author:
   name: "todaywrittenupdate team"
 
 ---
-
+ 
 # Yeh Rishta Kya Kehlata Hai 17th February 2026 Written Update: Will Vidya succeed in keeping Armaan and Abhira separate?
 ---
 
