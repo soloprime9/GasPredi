@@ -71,7 +71,7 @@ export default function Page({ params }) {
     data.publishDate && !Number.isNaN(new Date(data.publishDate).getTime())
       ? new Date(data.publishDate).toISOString()
       : stats.ctime.toISOString();
-  console.log(modifiedDate,publishDate)
+  
   const tags = Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [];
 
   const ogImage =
