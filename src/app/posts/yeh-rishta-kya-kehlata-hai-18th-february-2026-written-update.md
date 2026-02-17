@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 18th February 2026 Written Update: Who helped Abhira?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (18th February 2026): Who helped Abhira? Armaan in stress and don't wanna go to home. Meher and Krish said to go home, but Armaan don't want go home. Will Myra and Mukti be friend in Hostel and can help of Abhira and Armaan."
-publishDate: "2026-02-17T18:00:00+05:30"
+publishDate: "2026-02-17T15:00:00Z"
 tags:
   - "Anupama written update"
   - "Anupama 18th February 2026"
