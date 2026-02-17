@@ -18,7 +18,7 @@ author:
   name: "todaywrittenupdate team"
 
 ---
- 
+
 # Yeh Rishta Kya Kehlata Hai 18th February 2026 Written Update: Who helped Abhira?
 ---
 
