@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 21th February 2026 Written Update: Abhira meets Armaan. What next?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (21th February 2026): Abhira meets Armaan. What next? Armaan'car gets punchured. First Time Abhira and Armaan looked at each other. But they exchange entense look. Will Myra and Mukti be friend in Hostel and can help reuniun of Abhira and Armaan. But According to rumors, Abhira and Armaan hate each other."
-publishDate: "2026-02-20T18:00:00+05:30"
+publishDate: "2026-02-20T16:00:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 21th February 2026"
