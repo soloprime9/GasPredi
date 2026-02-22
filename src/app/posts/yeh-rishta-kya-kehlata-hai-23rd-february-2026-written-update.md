@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 23rd February 2026 Written Update: Myra gets shocked."
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (23rd February 2026): Myra gets shocked. Armaan'car gets punchured. First Time Abhira and Armaan looked at each other. Abhira got shocked to see Armaan. But they exchange entense look. Will Myra and Mukti be friend in Hostel and can help reuniun of Abhira and Armaan. But According to rumors, Abhira and Armaan hate each other."
-publishDate: "2026-02-21T16:00:00+05:30"
+publishDate: "2026-02-22T16:00:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 23rd February 2026"
