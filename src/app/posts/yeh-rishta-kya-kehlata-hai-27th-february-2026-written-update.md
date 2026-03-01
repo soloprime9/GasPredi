@@ -1,10 +1,10 @@
 --- 
-title: "Yeh Rishta Kya Kehlata Hai 27th February 2026 Written Update: Arman insulted Abhira's care?"
-description: "Today Written update of Yeh Rishta Kya Kehlata Hai (27th February 2026): Arman insulted Abhira's care? Arman shocked by Abhira? Abhira refuses doctor's fees? Arman regrets his actions? See full details here."
-publishDate: "2026-02-26T20:20:00+05:30"
+title: "Yeh Rishta Kya Kehlata Hai 2nd March 2026 Written Update: Arman insulted Abhira's care?"
+description: "Today Written update of Yeh Rishta Kya Kehlata Hai (2nd March 2026): Arman insulted Abhira's care? Arman shocked by Abhira? Abhira refuses doctor's fees? Arman regrets his actions? See full details here."
+publishDate: "2026-03-01T18:20:00+05:30"
 tags:
   - "Anupama written update"
-  - "Anupama 27th February 2026"
+  - "Anupama 2nd March 2026"
   - "Star Plus"
   - "Yeh Rishta Kya Kehlata Hai"
   - "Arman insulted Abhira's care?"
@@ -16,7 +16,7 @@ author:
 
 ---
 
-# Yeh Rishta Kya Kehlata Hai 27th February 2026 Written Update: Arman insulted Abhira's care?
+# Yeh Rishta Kya Kehlata Hai 2nd March 2026 Written Update: Arman insulted Abhira's care?
 ---
 
 ## Episode Summary
