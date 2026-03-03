@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 3rd March 2026 Written Update: Will Arman tells Abhira about Myra's truth?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (3rd March 2026): Will Arman tells Abhira about Myra's truth? Why Armaan and Abhira got shocked to see Myra's "Maa" tattoo? Builder stop Abhira's colony water pipe. Abhira ennter in Arman holi party. Arman try to maintain his calm."
-publishDate: "2026-03-03T08:05:00+05:30"
+publishDate: "2026-03-03T08:12:00+05:30"
 tags:
   - "Anupama written update"
   - "Anupama 3rd March 2026"
