@@ -21,7 +21,14 @@ export default function RootLayout({ children }) {
      crossorigin="anonymous"></script>
 
 
-
+{/* Google AdSense */}
+<Script
+  id="google-adsense"
+  strategy="afterInteractive"
+  async
+  crossOrigin="anonymous"
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5007774826517640"
+/>
 
 
 
