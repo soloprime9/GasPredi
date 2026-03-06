@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 6th March 2026 Written Update: Will Arman confess Love?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (6th March 2026): Will Armaan confess Love? Will Arman-Abhira confess their love? Who call Armaan and Abhira in same Holi party? Will Abhira see Myra in Holi party? Why Armaan and Abhira got shocked to see Myra's Maa tattoo? Myra hates too much Abhira. "
-publishDate: "2026-03-06T10:00:00+05:30"
+publishDate: "2026-03-06T10:00:00+05:30" 
 tags:
   - "Anupama written update"
   - "Anupama 6th March 2026"
