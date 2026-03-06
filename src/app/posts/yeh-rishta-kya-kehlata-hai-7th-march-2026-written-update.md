@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 7th March 2026 Written Update: Kaveri's Deadly Accident?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (7th March 2026): Kaveri's Deadly Accident? Will Arman-Abhira confess their love? Who call Armaan and Abhira in same Holi party? Will Armaan and Abhira will reunite in Holi? Myra hates too much Abhira. What is Manisha hiding secret of Aryan to Poddar family?"
-publishDate: "2026-03-07T10:00:00+05:30" 
+publishDate: "2026-03-07T00:00:04+05:30" 
 tags:
   - "Anupama written update"
   - "Anupama 7th March 2026"
