@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 8th March 2026 Written Update: Will Myra accept?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (8th March 2026): Will Myra accept? Kaveri's Deadly Accident? Will Armaan and Abhira will reunite in Holi? Myra hates too much Abhira. What is Manisha hiding secret of Aryan to Poddar family? Armaan and Abhira ready to marry in night."
-publishDate: "2026-03-08T08:00:00+05:30" 
+publishDate: "2026-03-08T10:00:00+05:30" 
 tags:
   - "Anupama written update"
   - "Anupama 8th March 2026"
