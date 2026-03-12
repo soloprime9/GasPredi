@@ -1,7 +1,7 @@
 --- 
 title: "Yeh Rishta Kya Kehlata Hai 13th March 2026 Written Update: Myra loves Meher?"
 description: "Today Written update of Yeh Rishta Kya Kehlata Hai (13th March 2026): Myra loves Meher? Armaan and Abhira will help Aryan. Armaan saw Abhira on road standing alone. Will Armaan and Abhira love again."
-publishDate: "2026-03-12T10:00:00+05:30" 
+publishDate: "2026-03-13T10:00:00+05:30" 
 tags:
   - "Anupama written update"
   - "Anupama 13th March 2026"
