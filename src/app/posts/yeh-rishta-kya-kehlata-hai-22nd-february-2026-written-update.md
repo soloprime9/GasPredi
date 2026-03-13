@@ -63,11 +63,12 @@ Next we see tha rin upcoming episode that where Armaan'car gets punchured, go to
 
 ## Sources
 
-- [FondPeace.com](https://fondpeace.com/)
-- [Disney+ Hotstar](https://www.hotstar.com/in)  
-- [IWMBuzz — Written Updates](https://www.iwmbuzz.com/)
-- [Telly Update](https://www.tellyupdate.com)
-- [Zee TV](https://www.zee5.com/)
-   
+<ul>
+  <li><a href="https://www.hotstar.com/in" target="_blank" rel="noopener">Disney+ Hotstar</a></li>
+  <li><a href="https://www.iwmbuzz.com/" target="_blank" rel="noopener">IWMBuzz — Written Updates</a></li>
+  <li><a href="https://www.tellyupdate.com" target="_blank" rel="noopener">Telly Update</a></li>
+  <li><a href="https://www.zee5.com/" target="_blank" rel="noopener">Zee TV</a></li>
+  <li><a href="https://fondpeace.com/" target="_blank" rel="noopener">FondPeace.com</a></li>
+</ul>
 
 ---
