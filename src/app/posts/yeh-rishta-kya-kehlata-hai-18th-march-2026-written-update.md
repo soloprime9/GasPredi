@@ -20,7 +20,7 @@ author:
 
 ---
 
-# Yeh Rishta Kya Kehlata Hai 18th March 2026 Written Update: Will Myra see Abhira?
+# Yeh Rishta Kya Kehlata Hai 18th March 2026 Written Update: Truck Crushes Myra?
 ---
 
 ## Episode Summary
