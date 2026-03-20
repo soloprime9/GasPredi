@@ -1,6 +1,6 @@
 --- 
-title: "Yeh Rishta Kya Kehlata Hai 20th March 2026 Written Update: Will Myra accept Abhira?"
-description: "Today Written update of Yeh Rishta Kya Kehlata Hai (20th March 2026): Will Myra accept Abhira? Damyanti warns poddar to eliminate marriage if she find anything suspicious. What will happen next with Abhira, Myra, and Armaan. Will Abhira give a chance to Abhira."
+title: "Yeh Rishta Kya Kehlata Hai 20th March 2026 Written Update: Why Myra Hasn't Home?"
+description: "Today Written update of Yeh Rishta Kya Kehlata Hai (20th March 2026): Why Myra Hasn't Home? Will Myra accept Abhira? Damyanti warns poddar to eliminate marriage if she find anything suspicious. What will happen next with Abhira, Myra, and Armaan. Will Abhira give a chance to Abhira."
 publishDate: "2026-03-20T10:00:00+05:30" 
 tags:
   - "Anupama written update"
@@ -13,6 +13,7 @@ tags:
   - "Myra loves Meher?"
   - "Will Myra see Abhira?"
   - "Will Myra accept Abhira?"
+  - "Why Myra Hasn't Home?"
   
 canonical: "https://todaywrittenupdate.blog/yeh-rishta-kya-kehlata-hai-20th-march-2026-written-update"
 ogImage: "/Images/Yrkkh.jpg"
@@ -21,7 +22,7 @@ author:
 
 ---
 
-# Yeh Rishta Kya Kehlata Hai 20th March 2026 Written Update: Will Myra accept Abhira?
+# Yeh Rishta Kya Kehlata Hai 20th March 2026 Written Update: Why Myra Hasn't Home?
 ---
 
 ## Episode Summary
@@ -48,7 +49,7 @@ This is so popular show at this time, because this show story is going to blow o
 
 ## Next Episode Update
 
-Next we see tha rin upcoming episode that where Armaan said that not interfere in his family matters. Will Myra accept Abhira? Myra ignore Abhira. Abhira say that she will not lost again Myra. Next what will happen when Myra and Armaan will get know about Mukti. Will Damyanti break Aryan's wedding. For all upcoming updates these you can connect with us on [Today Written Update](https://www.todaywrittenupdate.blog/).
+Next we see tha rin upcoming episode that where Armaan said that not interfere in his family matters. Why Myra Hasn't Home? Will Myra accept Abhira? Myra ignore Abhira. Abhira say that she will not lost again Myra. Next what will happen when Myra and Armaan will get know about Mukti. Will Damyanti break Aryan's wedding. For all upcoming updates these you can connect with us on [Today Written Update](https://www.todaywrittenupdate.blog/).
 
 ---
 
