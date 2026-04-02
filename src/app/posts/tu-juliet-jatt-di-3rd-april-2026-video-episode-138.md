@@ -1,7 +1,7 @@
 --- 
 title: "Tu Juliet Jatt Di 3rd April 2026 Video Episode 138"
 description: "Tu Juliet Jatt Di Today Full Episode 138 (3rd April 2026): What will happen with heer? Watch more hindi serials and reality shows."
-publishDate: "2026-04-03T10:00:00+05:30" 
+publishDate: "2026-04-02T10:00:00+05:30" 
 tags:
   - "Anupama written update"
   - "Anupama 3rd March 2026"
