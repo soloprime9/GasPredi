@@ -35,9 +35,9 @@ This is so popular show at this time, because this show story is going to blow o
 
 Watch Online Tu Juliet Jatt Di 3rd April 2026 Today Full Episode 138 In High Quality Video, Hindi Desi Serial Tu Juliet Jatt Di Latest Episode by Colors Tv and JioHotstar, Indian TV Serial Tu Juliet Jatt Di All Episode Download Free, Tu Juliet Jatt Di Episode 137 Dailymotion Video.
 
-Show Name : **Tu Juliet Jatt Di**
-Telecast Date: **3rd April 2026**
-Video Owner: **Colors Tv And JioHotstar**
+Show Name : **Tu Juliet Jatt Di**<br>
+Telecast Date: **3rd April 2026**<br>
+Video Owner: **Colors Tv And JioHotstar**<br>
 Video Source : **Official Player/Dailymotion**
 
 
