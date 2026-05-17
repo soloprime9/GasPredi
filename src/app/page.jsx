@@ -1,6 +1,6 @@
 import JobsPageView from "@/Job/JobsPageView";
 import JobAuthGate from "@/Job/JobAuthGate";
-import { cookies } from "next/headers";
+import { cookies } from "next/headers"; 
 import { redirect } from "next/navigation";
 
  
