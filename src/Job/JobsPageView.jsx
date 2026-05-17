@@ -1,6 +1,6 @@
 "use client";
 import JobsFAQ from "./JobsFAQ";
-import { useState } from "react";
+import { useState } from "react"; 
 import Link from "next/link";
 import {
   FaBars,
