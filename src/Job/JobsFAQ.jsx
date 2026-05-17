@@ -7,15 +7,15 @@ export default function JobsFAQ() {
 
   const faqs = [
     {
-      q: "What is FondPeace Jobs?",
-      a: "FondPeace Jobs is a free job discovery platform by FondPeace.com where users can explore verified job opportunities across India including IT, fresher, remote, and MNC jobs."
+      q: "What is Job Tension Jobs?",
+      a: "Job Tension Jobs is a free job discovery platform by Job Tension where users can explore verified job opportunities across India including IT, fresher, remote, and MNC jobs."
     },
     {
-      q: "Is FondPeace Jobs completely free?",
-      a: "Yes. FondPeace Jobs is 100% free for job seekers and employers. No subscriptions, no commissions, and no hidden charges."
+      q: "Is Job Tension Jobs completely free?",
+      a: "Yes. Job Tension Jobs is 100% free for job seekers and employers. No subscriptions, no commissions, and no hidden charges."
     },
     {
-      q: "Who can post jobs on FondPeace?",
+      q: "Who can post jobs on Job Tension?",
       a: "Startups, companies, recruiters, HR professionals, and founders can post jobs for free to reach genuine candidates."
     },
     {
@@ -35,19 +35,19 @@ export default function JobsFAQ() {
       a: "New job opportunities are added regularly as companies and recruiters publish openings."
     },
     {
-      q: "Is FondPeace Jobs suitable for freshers?",
-      a: "Absolutely. FondPeace focuses strongly on fresher-friendly and early-career job opportunities."
+      q: "Is Job Tension Jobs suitable for freshers?",
+      a: "Absolutely. Job Tension focuses strongly on fresher-friendly and early-career job opportunities."
     },
     {
-      q: "Is FondPeace a trusted platform?",
-      a: "FondPeace is a community-first platform focused on transparency, trust, and long-term value for users."
+      q: "Is Job Tension a trusted platform?",
+      a: "Job Tension is a community-first platform focused on transparency, trust, and long-term value for users."
     }
   ];
 
   return (
     <section className="mt-20 max-w-4xl mx-auto px-4">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
-        FondPeace Jobs – FAQs
+        Job Tension Jobs – FAQs
       </h2>
 
       <div className="space-y-4">
