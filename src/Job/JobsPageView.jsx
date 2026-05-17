@@ -23,16 +23,16 @@ export default function JobsPageView({ jobs }) {
 
           {/* LOGO */}
           <Link href="/" className="text-xl sm:text-2xl font-bold text-blue-600">
-            FondPeace Jobs
+          Job Tension
           </Link>
 
           {/* DESKTOP MENU */}
           <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700">
             <Link href="/" className="hover:text-blue-600">Home</Link>
-            <Link href="/JobTension/login" className="hover:text-blue-600">Login</Link>
-            <Link href="/JobTension/register" className="hover:text-blue-600">Signup</Link>
+            <Link href="/login" className="hover:text-blue-600">Login</Link>
+            <Link href="/register" className="hover:text-blue-600">Signup</Link>
             <Link
-              href="/JobTension/upload"
+              href="/upload"
               className="bg-blue-600 text-white px-4 py-2 rounded-lg"
             >
               Post Job Free
@@ -61,12 +61,12 @@ export default function JobsPageView({ jobs }) {
               </button>
 
               <Link onClick={() => setMenuOpen(false)} href="/">Home</Link>
-              <Link onClick={() => setMenuOpen(false)} href="/JobTension/login">Login</Link>
-              <Link onClick={() => setMenuOpen(false)} href="/JobTension/register">Signup</Link>
+              <Link onClick={() => setMenuOpen(false)} href="/login">Login</Link>
+              <Link onClick={() => setMenuOpen(false)} href="/register">Signup</Link>
 
               <Link
                 onClick={() => setMenuOpen(false)}
-                href="/JobTension/post-job"
+                href="/upload"
                 className="mt-4 bg-blue-600 text-white text-center py-2 rounded-lg"
               >
                 Post Job Free
@@ -80,14 +80,14 @@ export default function JobsPageView({ jobs }) {
       <section className="bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 py-10 text-center">
           <h1 className="text-2xl sm:text-3xl font-bold">
-            Post Jobs Free on FondPeace
+            Post Jobs Free on Job Tension
           </h1>
           <p className="mt-2 text-white/90 max-w-2xl mx-auto">
             Hire faster. Reach thousands of verified job seekers across India.
           </p>
 
           <Link
-            href="/JobTension/upload"
+            href="/upload"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-5 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold"
@@ -108,7 +108,7 @@ export default function JobsPageView({ jobs }) {
             {jobs.map((job) => (
               <Link
                 key={job._id}
-                href={`/JobTension/${job._id}`}
+                href={`/job/${job._id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white rounded-xl p-5 border-4 shadow hover:shadow-lg transition"
@@ -196,7 +196,7 @@ export default function JobsPageView({ jobs }) {
       <footer className="bg-gray-900 text-gray-300">
         <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <h3 className="font-bold text-white">FondPeace Jobs</h3>
+            <h3 className="font-bold text-white">Job Tension Jobs</h3>
             <p className="text-sm mt-2">
               Free job portal for India. Trusted & transparent.
             </p>
@@ -206,27 +206,27 @@ export default function JobsPageView({ jobs }) {
             <h4 className="font-semibold text-white">Links</h4>
             <ul className="mt-2 space-y-1 text-sm">
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/JobTension/login">Login</Link></li>
-              <li><Link href="/JobTension/register">Signup</Link></li>
+              <li><Link href="/login">Login</Link></li>
+              <li><Link href="/register">Signup</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white">For Employers</h4>
             <ul className="mt-2 space-y-1 text-sm">
-              <li><Link href="/JobTension/upload">Post Job Free</Link></li>
+              <li><Link href="/upload">Post Job Free</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white">Contact</h4>
-            <p className="text-sm mt-2">support@fondpeace.com</p>
+            <p className="text-sm mt-2">support@jobtension.com</p>
             <p className="text-sm">India</p>
           </div>
         </div>
 
         <div className="text-center text-xs text-gray-500 border-t border-gray-700 py-4">
-          © {new Date().getFullYear()} FondPeace. All rights reserved.
+          © {new Date().getFullYear()} Job Tension. All rights reserved.
         </div>
       </footer>
     </div>
