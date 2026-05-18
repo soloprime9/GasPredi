@@ -36,10 +36,10 @@ export default function RootLayout({ children }) {
 
 
 
-        {/* H1 */}
+        /* {/* H1 */}
       <h1 className="text-3xl font-bold text-center mb-6"><a href="/" className="text-blue-600 ">
           Today Written Update
-        </a></h1>
+        </a></h1> */
       
 
       
@@ -48,10 +48,10 @@ export default function RootLayout({ children }) {
         {children}
 
 
-        {/* Footer */}
+        /* {/* Footer */}
       <footer className="mt-12 border-t pt-6 text-center text-gray-500 text-sm">
         © {new Date().getFullYear()} Today Written Update. All Rights Reserved.
-      </footer>
+      </footer> */
         
       </body>
     </html>
