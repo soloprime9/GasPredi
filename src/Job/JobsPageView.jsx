@@ -88,8 +88,7 @@ export default function JobsPageView({ jobs }) {
 
           <Link
             href="/upload"
-            target="_blank"
-            rel="noopener noreferrer"
+            
             className="inline-block mt-5 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold"
           >
             Post Job Free
