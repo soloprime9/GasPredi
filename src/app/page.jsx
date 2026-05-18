@@ -160,7 +160,7 @@ export default async function JobsPage() {
         }}
       />
       
-      <JobsPageView jobs={jobs} />
+      {/* <JobsPageView jobs={jobs} /> */}
      
     </>
   );
