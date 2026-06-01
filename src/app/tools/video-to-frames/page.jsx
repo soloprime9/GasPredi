@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import JSZip from 'jszip';
 import { jsPDF } from 'jspdf';
 import PptxGenJS from 'pptxgenjs';
-
+ 
 const API_BASE = 'https://api.framesnap.app';
 
 export default function FrameExtractor() {
