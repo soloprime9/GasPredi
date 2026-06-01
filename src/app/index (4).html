@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free Video Downloader — YouTube, Vimeo, 1000+ Sites | FrameSnap</title>
+<meta name="description" content="Download videos from YouTube, Vimeo, Twitter, Facebook, Instagram, and 1000+ sites free. Choose quality up to 4K. Download as MP4, MP3, or WebM. No sign-up, no watermark."/>
+<meta name="keywords" content="video downloader, youtube downloader free, download youtube video, download vimeo video, youtube to mp3, youtube to mp4, free video download, online video downloader"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<link rel="canonical" href="https://framesnap.app/tools/video-downloader/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://framesnap.app/tools/video-downloader/"/>
+<meta property="og:title" content="Free Video Downloader — YouTube, Vimeo, 1000+ Sites"/>
+<meta property="og:description" content="Download from YouTube, Vimeo, Twitter, Facebook, Instagram. Choose quality up to 4K. MP4, MP3, WebM. Free, no account."/>
+<meta property="og:site_name" content="FrameSnap"/>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Free Video Downloader","applicationCategory":"MultimediaApplication","operatingSystem":"Any (Web Browser)","url":"https://framesnap.app/tools/video-downloader/","description":"Download public videos from YouTube, Vimeo, and 1000+ sites. Choose quality and format. Free, no account, no watermark.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["YouTube video download","Vimeo download","Twitter/X video download","Facebook video download","Instagram video download","MP4 download","MP3 audio extraction","Quality selection up to 4K","No sign-up required"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://framesnap.app/"},{"@type":"ListItem","position":2,"name":"Video Downloader","item":"https://framesnap.app/tools/video-downloader/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this video downloader free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No account, no subscription, no watermark."}},{"@type":"Question","name":"What video sites are supported?","acceptedAnswer":{"@type":"Answer","text":"YouTube, Vimeo, Twitter/X, Facebook, Instagram, Dailymotion, Reddit, TikTok, and 1000+ more sites supported by yt-dlp."}},{"@type":"Question","name":"Can I download YouTube videos?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste any public YouTube URL and choose your format and quality. Private or age-restricted videos are not supported."}},{"@type":"Question","name":"Is downloading videos legal?","acceptedAnswer":{"@type":"Answer","text":"Downloading public videos for personal offline use is generally considered fair use in many countries. You are responsible for complying with the copyright laws and platform terms of service applicable to you."}}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23080c14'/><rect x='12' y='24' width='52' height='36' rx='4' fill='none' stroke='%234f9eff' stroke-width='4'/><polygon points='42,30 42,54 62,42' fill='%234f9eff'/></svg>"/>
+
+<style>
+:root{
+  --bg:#080c14;--bg2:#0d1220;--bg3:#121828;--bg4:#1a2236;
+  --border:#1e2d48;--border2:#253550;
+  --text:#e8eef8;--muted:#6b7fa3;--muted2:#3d5070;
+  --accent:#4f9eff;--accent2:#7bb8ff;--accent3:#2563eb;
+  --gold:#f59e0b;--green:#10b981;--red:#ef4444;
+  --fh:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif;
+  --r:12px;--rsm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:var(--fb);}
+
+body::before{content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.4;}
+body::after{content:'';position:fixed;inset:0;
+  background-image:linear-gradient(rgba(79,158,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(79,158,255,.025) 1px,transparent 1px);
+  background-size:48px 48px;pointer-events:none;z-index:0;}
+
+header{position:sticky;top:0;z-index:500;background:rgba(8,12,20,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+nav{max-width:1200px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--fh);font-size:1.1rem;font-weight:800;letter-spacing:-.02em;}
+.logo-mark{width:30px;height:30px;background:var(--accent3);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.breadcrumb{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.breadcrumb a:hover{color:var(--text);}
+
+.page-hero{position:relative;z-index:1;padding:52px 24px 40px;text-align:center;}
+.page-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:700px;height:500px;
+  background:radial-gradient(ellipse,rgba(37,99,235,.12),transparent 70%);pointer-events:none;}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);
+  color:var(--green);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:100px;margin-bottom:18px;}
+.chip::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.page-hero h1{font-family:var(--fh);font-size:clamp(2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:14px;}
+.page-hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--green),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.page-hero p{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 28px;line-height:1.7;}
+.feature-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-bottom:44px;}
+.fpill{display:inline-flex;align-items:center;gap:5px;background:var(--bg2);border:1px solid var(--border);
+  font-size:.74rem;color:var(--muted);padding:4px 11px;border-radius:100px;}
+.fdot{width:5px;height:5px;border-radius:50%;background:var(--green);}
+
+/* TOOL OUTER */
+.tool-outer{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 20px 100px;}
+.ad-slot{background:var(--bg2);border:1px dashed var(--border);border-radius:var(--r);
+  padding:18px;text-align:center;color:var(--muted2);font-size:.76rem;min-height:90px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+
+/* URL INPUT PANEL */
+.input-panel{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:16px;}
+.panel-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px;}
+.url-wrap{display:flex;gap:10px;}
+.url-input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rsm);
+  color:var(--text);font-family:var(--fb);font-size:.95rem;padding:13px 16px;outline:none;transition:border-color .2s;}
+.url-input:focus{border-color:var(--accent3);}
+.url-input::placeholder{color:var(--muted2);}
+.btn-fetch{display:inline-flex;align-items:center;gap:7px;background:var(--accent3);color:#fff;
+  font-family:var(--fh);font-size:.9rem;font-weight:700;border:none;border-radius:var(--r);
+  padding:13px 22px;transition:all .2s;white-space:nowrap;}
+.btn-fetch:hover{background:var(--accent);transform:translateY(-1px);}
+.btn-fetch:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+
+/* SUPPORTED SITES */
+.sites-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.site-chip{font-size:.72rem;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);
+  padding:3px 10px;border-radius:100px;}
+
+/* LOADING */
+.loading-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:40px;text-align:center;margin-bottom:16px;}
+.loading-panel.active{display:block;}
+.spinner{width:36px;height:36px;border:2.5px solid var(--border);border-top-color:var(--accent);
+  border-radius:50%;animation:spin .75s linear infinite;margin:0 auto 16px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:6px;}
+.loading-sub{font-size:.85rem;color:var(--muted);}
+
+/* VIDEO INFO PANEL */
+.info-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;}
+.info-panel.active{display:block;}
+.video-meta{display:flex;gap:18px;align-items:flex-start;margin-bottom:20px;}
+.video-thumb-wrap{width:140px;flex-shrink:0;border-radius:var(--rsm);overflow:hidden;aspect-ratio:16/9;background:var(--bg3);}
+.video-thumb-wrap img{width:100%;height:100%;object-fit:cover;}
+.video-details{flex:1;min-width:0;}
+.video-title{font-family:var(--fh);font-size:1.05rem;font-weight:700;margin-bottom:6px;line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.video-channel{font-size:.82rem;color:var(--muted);margin-bottom:8px;}
+.video-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.vtag{font-size:.7rem;background:var(--bg4);border:1px solid var(--border);color:var(--muted);
+  padding:2px 8px;border-radius:4px;}
+
+/* FORMAT / QUALITY SELECTOR */
+.format-section{margin-bottom:20px;}
+.format-label{font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:10px;}
+.format-tabs{display:flex;gap:8px;margin-bottom:14px;}
+.ftab{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.85rem;
+  font-weight:600;padding:10px 14px;border-radius:var(--rsm);transition:all .2s;text-align:center;}
+.ftab.active{background:rgba(37,99,235,.15);border-color:var(--accent3);color:var(--text);}
+.ftab:hover:not(.active){border-color:var(--border2);color:var(--text);}
+.quality-list{display:flex;flex-direction:column;gap:8px;}
+.quality-row{display:flex;align-items:center;justify-content:space-between;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--rsm);padding:12px 16px;
+  transition:border-color .2s;}
+.quality-row:hover{border-color:var(--border2);}
+.quality-left{display:flex;align-items:center;gap:10px;}
+.quality-badge{font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:100px;}
+.qb-4k{background:rgba(167,139,250,.15);color:#c4b5fd;border:1px solid rgba(167,139,250,.2);}
+.qb-1080{background:rgba(79,158,255,.1);color:var(--accent2);border:1px solid rgba(79,158,255,.2);}
+.qb-720{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.2);}
+.qb-480{background:rgba(245,158,11,.1);color:var(--gold);border:1px solid rgba(245,158,11,.2);}
+.qb-360{background:rgba(100,116,139,.1);color:#94a3b8;border:1px solid rgba(100,116,139,.2);}
+.qb-mp3{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.2);}
+.quality-info{font-size:.8rem;color:var(--muted);}
+.quality-size{font-size:.76rem;color:var(--muted2);}
+.btn-dl-quality{display:inline-flex;align-items:center;gap:6px;background:var(--accent3);color:#fff;
+  font-size:.82rem;font-weight:700;border:none;border-radius:var(--rsm);padding:8px 16px;transition:all .2s;}
+.btn-dl-quality:hover{background:var(--accent);transform:translateY(-1px);}
+
+/* PROGRESS */
+.dl-progress{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;}
+.dl-progress.active{display:block;}
+.dp-title{font-family:var(--fh);font-weight:700;font-size:1rem;margin-bottom:10px;}
+.dp-bar-outer{background:var(--bg3);border-radius:100px;height:8px;overflow:hidden;margin-bottom:8px;}
+.dp-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--green));
+  border-radius:100px;width:0;transition:width .5s;}
+.dp-info{font-size:.8rem;color:var(--muted);}
+
+/* DONE */
+.done-panel{display:none;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);
+  border-radius:14px;padding:24px;text-align:center;margin-bottom:16px;}
+.done-panel.active{display:block;}
+.done-check{font-size:2.4rem;margin-bottom:10px;}
+.done-title{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--green);margin-bottom:6px;}
+.done-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;}
+.btn-another{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:.85rem;
+  font-weight:600;border-radius:var(--rsm);padding:10px 20px;transition:all .2s;}
+.btn-another:hover{border-color:var(--accent);color:var(--accent2);}
+
+/* ERROR */
+.error-box{display:none;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);
+  border-radius:14px;padding:20px;text-align:center;margin-bottom:16px;}
+.error-box.active{display:block;}
+.error-box h3{color:var(--red);font-family:var(--fh);margin-bottom:7px;}
+.error-box p{font-size:.86rem;color:var(--muted);margin-bottom:14px;}
+.btn-retry{background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:.84rem;
+  font-weight:600;border-radius:var(--rsm);padding:9px 18px;}
+
+/* LEGAL NOTICE */
+.legal-notice{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:var(--rsm);
+  padding:14px 18px;font-size:.78rem;color:var(--muted);line-height:1.65;margin-bottom:20px;}
+
+/* INFO SECTIONS */
+.info-section{position:relative;z-index:1;padding:60px 24px;border-top:1px solid var(--border);}
+.sec-ey{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:9px;}
+.sec-h2{font-family:var(--fh);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:32px;}
+.cards3{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;max-width:1100px;margin:0 auto;}
+.icard{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;}
+.icard-ico{font-size:1.5rem;margin-bottom:9px;}
+.icard h3{font-family:var(--fh);font-size:.92rem;font-weight:700;margin-bottom:5px;}
+.icard p{font-size:.79rem;color:var(--muted);line-height:1.6;}
+.faq-wrap{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-btn{width:100%;background:none;border:none;color:var(--text);font-family:var(--fb);font-size:.93rem;
+  font-weight:500;text-align:left;padding:16px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+.faq-btn:hover{color:var(--accent2);}
+.fq-ic{width:21px;height:21px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:.78rem;flex-shrink:0;transition:all .3s;}
+.faq-item.open .fq-ic{transform:rotate(45deg);background:var(--accent3);border-color:var(--accent3);color:#fff;}
+.faq-ans{font-size:.86rem;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s,padding .3s;}
+.faq-item.open .faq-ans{max-height:300px;padding-bottom:16px;}
+.seo-section{position:relative;z-index:1;padding:60px 24px;border-top:1px solid var(--border);}
+.seo-inner{max-width:740px;margin:0 auto;}
+.seo-inner h2{font-family:var(--fh);font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin:30px 0 10px;}
+.seo-inner h2:first-child{margin-top:0;}
+.seo-inner p{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:10px;}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:36px 24px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem;color:var(--muted2);}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;}
+.footer-links a{color:var(--muted2);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo"><div class="logo-mark">🎬</div>FrameSnap</a>
+    <nav class="breadcrumb">
+      <a href="/">Home</a><span style="opacity:.3">›</span>
+      <span aria-current="page">Video Downloader</span>
+    </nav>
+  </nav>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="chip">1000+ sites · No account</div>
+  <h1>Video Downloader<br/><em>Free, Any Site</em></h1>
+  <p>Download public videos from YouTube, Vimeo, Twitter, Facebook, Instagram, and 1000+ sites. Choose quality and format. No sign-up, no watermark.</p>
+  <div class="feature-pills">
+    <span class="fpill"><span class="fdot"></span>YouTube + 1000 sites</span>
+    <span class="fpill"><span class="fdot"></span>MP4 · MP3 · WebM</span>
+    <span class="fpill"><span class="fdot"></span>Up to 4K where available</span>
+    <span class="fpill"><span class="fdot"></span>No account · No watermark</span>
+    <span class="fpill"><span class="fdot" style="background:var(--accent)"></span>Public content only</span>
+  </div>
+</section>
+
+<div class="tool-outer">
+
+  <div class="legal-notice">
+    ⚖️ <strong>Important:</strong> This tool only supports publicly accessible videos. You are responsible for complying with the copyright laws and platform terms of service in your country. Only download content you have the right to download.
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+
+  <!-- INPUT -->
+  <div class="input-panel" id="inputPanel">
+    <div class="panel-label">Paste Video URL</div>
+    <div class="url-wrap">
+      <input class="url-input" id="dlUrlInput" type="url" placeholder="https://www.youtube.com/watch?v=…"/>
+      <button class="btn-fetch" id="fetchInfoBtn" type="button">🔍 Get Info</button>
+    </div>
+    <div class="sites-row">
+      <span class="site-chip">YouTube</span>
+      <span class="site-chip">Vimeo</span>
+      <span class="site-chip">Twitter/X</span>
+      <span class="site-chip">Facebook</span>
+      <span class="site-chip">Instagram</span>
+      <span class="site-chip">Dailymotion</span>
+      <span class="site-chip">Reddit</span>
+      <span class="site-chip">TikTok</span>
+      <span class="site-chip">1000+ more</span>
+    </div>
+    <p id="dlApiStatus" style="font-size:.73rem;color:var(--muted2);margin-top:12px;">API: checking…</p>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-panel" id="loadingPanel">
+    <div class="spinner"></div>
+    <div class="loading-text">Fetching video info…</div>
+    <div class="loading-sub">This takes 2–5 seconds</div>
+  </div>
+
+  <!-- VIDEO INFO + FORMAT SELECTOR -->
+  <div class="info-panel" id="infoPanel">
+    <div class="video-meta">
+      <div class="video-thumb-wrap">
+        <img id="vThumb" src="" alt="Video thumbnail"/>
+      </div>
+      <div class="video-details">
+        <div class="video-title" id="vTitle">Video Title</div>
+        <div class="video-channel" id="vChannel"></div>
+        <div class="video-tags" id="vTags"></div>
+      </div>
+    </div>
+
+    <div class="format-section">
+      <div class="format-label">Format</div>
+      <div class="format-tabs">
+        <button class="ftab active" data-fmt="mp4" type="button">🎬 MP4 Video</button>
+        <button class="ftab" data-fmt="mp3" type="button">🎵 MP3 Audio</button>
+        <button class="ftab" data-fmt="webm" type="button">📹 WebM</button>
+      </div>
+      <div class="quality-list" id="qualityList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <button class="btn-another" id="searchAnotherBtn" type="button" style="margin-top:8px;">🔄 Search another URL</button>
+  </div>
+
+  <!-- DOWNLOAD PROGRESS -->
+  <div class="dl-progress" id="dlProgress">
+    <div class="dp-title" id="dpTitle">Preparing download…</div>
+    <div class="dp-bar-outer"><div class="dp-bar-fill" id="dpBar"></div></div>
+    <div class="dp-info" id="dpInfo">Please wait…</div>
+  </div>
+
+  <!-- DONE -->
+  <div class="done-panel" id="donePanel">
+    <div class="done-check">✅</div>
+    <div class="done-title">Download started!</div>
+    <div class="done-sub" id="doneSub">Your file is downloading…</div>
+    <button class="btn-another" id="anotherBtn" type="button">⬇ Download another video</button>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-box" id="errorBox">
+    <h3>Could not fetch video</h3>
+    <p id="errorBoxMsg">The URL may be private, age-restricted, or unsupported.</p>
+    <button class="btn-retry" id="retryBtn" type="button">Try another URL</button>
+  </div>
+
+  <div class="ad-slot">Advertisement</div>
+</div>
+
+<!-- INFO SECTIONS -->
+<section class="info-section">
+  <div style="text-align:center;max-width:1100px;margin:0 auto;">
+    <div class="sec-ey">Features</div>
+    <h2 class="sec-h2">What makes this downloader different</h2>
+    <div class="cards3">
+      <div class="icard"><div class="icard-ico">🌐</div><h3>1000+ supported sites</h3><p>Powered by yt-dlp, the most comprehensive open-source video download engine. Supports every major platform.</p></div>
+      <div class="icard"><div class="icard-ico">🔍</div><h3>Video info preview</h3><p>See the title, thumbnail, duration, and all available quality options before downloading. No surprises.</p></div>
+      <div class="icard"><div class="icard-ico">🎬</div><h3>Multiple formats</h3><p>MP4 for video, MP3 for audio extraction, WebM for open format. Choose what suits your use case.</p></div>
+      <div class="icard"><div class="icard-ico">📺</div><h3>Quality up to 4K</h3><p>Where available, choose from 360p up to 4K. The tool shows you every quality option for the specific video.</p></div>
+      <div class="icard"><div class="icard-ico">🔒</div><h3>No stored data</h3><p>No user data, no history, no video storage. The server processes and delivers the file, then discards it immediately.</p></div>
+      <div class="icard"><div class="icard-ico">💸</div><h3>Completely free</h3><p>No account, no subscription, no per-download charge. Supported by non-intrusive advertising.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section" style="padding-top:0;">
+  <div style="text-align:center;">
+    <div class="sec-ey">FAQ</div>
+    <h2 class="sec-h2">Questions answered</h2>
+    <div class="faq-wrap" style="text-align:left;">
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Can I download YouTube videos for free?<span class="fq-ic">+</span></button>
+        <div class="faq-ans">Yes. Paste any public YouTube URL, choose your quality (up to 4K where available), and click Download. Age-restricted, private, and membership-only videos are not supported.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">How do I extract audio (MP3) from a YouTube video?<span class="fq-ic">+</span></button>
+        <div class="faq-ans">Paste the URL, click "Get Info", then select the "MP3 Audio" tab. Click the download button next to the MP3 option. The server extracts the audio and starts your download.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Are my downloads stored on your server?<span class="fq-ic">+</span></button>
+        <div class="faq-ans">No. The server processes and delivers the file directly to your browser. No video or audio files are permanently stored. Temporary processing files are deleted immediately after your download completes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">Is this legal to use?<span class="fq-ic">+</span></button>
+        <div class="faq-ans">This tool processes only publicly accessible content. Downloading for personal offline viewing is generally permitted under fair use in many countries. However, you are responsible for complying with the copyright laws and platform terms of service in your jurisdiction. Do not use this tool to redistribute copyrighted content.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">What if the video is unavailable or the download fails?<span class="fq-ic">+</span></button>
+        <div class="faq-ans">This can happen if the video is private, age-restricted, geo-blocked in the server's region, or if the platform has changed its URL format. Try refreshing and pasting the URL again. If it consistently fails, the video may not be downloadable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seo-section">
+  <div class="seo-inner">
+    <h2>Free online video downloader — no account needed</h2>
+    <p>FrameSnap's video downloader lets you download public videos from YouTube, Vimeo, Twitter, Facebook, Instagram, Dailymotion, and 1000+ other sites. Simply paste the URL, preview the video details, choose your quality, and click Download.</p>
+    <h2>How to download YouTube videos free</h2>
+    <p>Copy the URL from the YouTube video page. Paste it into the URL field above. Click "Get Info" to fetch available qualities. Choose your preferred quality (up to 4K where available). Click Download and the file will start downloading to your device.</p>
+    <h2>YouTube to MP3 converter</h2>
+    <p>To extract audio from a YouTube video: paste the URL, click "Get Info", then switch to the "MP3 Audio" tab. Click the download button. The server will extract the audio track and deliver it as a clean MP3 file.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2025 FrameSnap · Public content only · No stored data</span>
+    <nav class="footer-links">
+      <a href="/">← Home</a>
+      <a href="/tools/video-to-frames/">Frame Extractor</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+'use strict';
+const API_BASE = 'https://api.framesnap.app';
+let currentFormat = 'mp4';
+let currentVideoInfo = null;
+
+const $ = id => document.getElementById(id);
+const dlUrlInput   = $('dlUrlInput');
+const fetchInfoBtn = $('fetchInfoBtn');
+const inputPanel   = $('inputPanel');
+const loadingPanel = $('loadingPanel');
+const infoPanel    = $('infoPanel');
+const dlProgress   = $('dlProgress');
+const donePanel    = $('donePanel');
+const errorBox     = $('errorBox');
+
+// Check API
+async function checkAPI() {
+  try {
+    const r = await fetch(API_BASE + '/health', {signal: AbortSignal.timeout(4000)});
+    $('dlApiStatus').textContent = r.ok ? '✅ API Online' : '⚠️ API Offline';
+    $('dlApiStatus').style.color = r.ok ? 'var(--green)' : 'var(--gold)';
+  } catch {
+    $('dlApiStatus').textContent = '⚠️ API Offline — try again later';
+    $('dlApiStatus').style.color = 'var(--gold)';
+  }
+}
+checkAPI();
+
+function showOnly(panel) {
+  [inputPanel, loadingPanel, infoPanel, dlProgress, donePanel, errorBox].forEach(p => {
+    if (p.classList.contains('active')) p.classList.remove('active');
+    p.style.display = 'none';
+  });
+  panel.style.display = 'block';
+  if (panel !== inputPanel) panel.classList.add('active');
+  else panel.style.display = 'block';
+}
+
+// Format tabs
+document.querySelectorAll('.ftab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.ftab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    currentFormat = t.dataset.fmt;
+    renderQualityList();
+  });
+});
+
+fetchInfoBtn.addEventListener('click', fetchVideoInfo);
+dlUrlInput.addEventListener('keydown', e => { if (e.key === 'Enter') fetchVideoInfo(); });
+$('searchAnotherBtn').addEventListener('click', () => showOnly(inputPanel));
+$('anotherBtn').addEventListener('click', () => { showOnly(inputPanel); dlUrlInput.value = ''; });
+$('retryBtn').addEventListener('click', () => showOnly(inputPanel));
+
+async function fetchVideoInfo() {
+  const url = dlUrlInput.value.trim();
+  if (!url) { alert('Please paste a video URL.'); return; }
+
+  showOnly(loadingPanel);
+
+  try {
+    const res = await fetch(`${API_BASE}/info?url=${encodeURIComponent(url)}`);
+    if (!res.ok) throw new Error((await res.json()).error || 'Failed to fetch info');
+    const data = await res.json();
+    currentVideoInfo = data;
+    renderVideoInfo(data);
+    showOnly(infoPanel);
+  } catch(err) {
+    $('errorBoxMsg').textContent = err.message || 'This video could not be fetched. It may be private or unsupported.';
+    showOnly(errorBox);
+  }
+}
+
+function renderVideoInfo(data) {
+  $('vThumb').src   = data.thumbnail || '';
+  $('vThumb').alt   = data.title || 'Video thumbnail';
+  $('vTitle').textContent   = data.title || 'Unknown title';
+  $('vChannel').textContent = data.uploader ? `📺 ${data.uploader}` : '';
+  const tagsEl = $('vTags');
+  tagsEl.innerHTML = '';
+  if (data.duration) { const t = document.createElement('span'); t.className='vtag'; t.textContent=`⏱ ${formatDur(data.duration)}`; tagsEl.append(t); }
+  if (data.view_count) { const t = document.createElement('span'); t.className='vtag'; t.textContent=`👁 ${(data.view_count/1e6).toFixed(1)}M views`; tagsEl.append(t); }
+  renderQualityList();
+}
+
+function renderQualityList() {
+  const list = $('qualityList');
+  list.innerHTML = '';
+  if (!currentVideoInfo) return;
+
+  let options = [];
+  if (currentFormat === 'mp4') {
+    options = (currentVideoInfo.formats_mp4 || [
+      {quality:'4K', label:'2160p · Ultra HD', size:'~800 MB', badge:'4k'},
+      {quality:'1080', label:'1080p · Full HD', size:'~200 MB', badge:'1080'},
+      {quality:'720', label:'720p · HD', size:'~80 MB', badge:'720'},
+      {quality:'480', label:'480p · Standard', size:'~40 MB', badge:'480'},
+      {quality:'360', label:'360p · Low', size:'~20 MB', badge:'360'},
+    ]);
+  } else if (currentFormat === 'mp3') {
+    options = [
+      {quality:'mp3_320', label:'320 kbps · High quality', size:'~30 MB/hr', badge:'mp3'},
+      {quality:'mp3_192', label:'192 kbps · Standard', size:'~20 MB/hr', badge:'mp3'},
+      {quality:'mp3_128', label:'128 kbps · Compact', size:'~12 MB/hr', badge:'mp3'},
+    ];
+  } else {
+    options = [
+      {quality:'webm_1080', label:'1080p WebM', size:'~150 MB', badge:'1080'},
+      {quality:'webm_720',  label:'720p WebM',  size:'~60 MB',  badge:'720'},
+    ];
+  }
+
+  options.forEach(opt => {
+    const row = document.createElement('div');
+    row.className = 'quality-row';
+    row.innerHTML = `
+      <div class="quality-left">
+        <span class="quality-badge qb-${opt.badge}">${opt.quality.replace('mp3_','').replace('webm_','')}</span>
+        <span class="quality-info">${opt.label}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="quality-size">${opt.size}</span>
+        <button class="btn-dl-quality" type="button" data-quality="${opt.quality}">⬇ Download</button>
+      </div>`;
+    row.querySelector('.btn-dl-quality').addEventListener('click', () => startDownload(opt));
+    list.appendChild(row);
+  });
+}
+
+async function startDownload(opt) {
+  const url = dlUrlInput.value.trim();
+  showOnly(dlProgress);
+  $('dpTitle').textContent = `Downloading ${opt.label}…`;
+  $('dpInfo').textContent  = 'Server is preparing your file…';
+  $('dpBar').style.width   = '0%';
+
+  // Animate progress bar while waiting
+  let pct = 0;
+  const interval = setInterval(() => {
+    pct = Math.min(92, pct + Math.random() * 8);
+    $('dpBar').style.width = pct + '%';
+    if (pct > 60) $('dpInfo').textContent = 'Almost ready…';
+  }, 600);
+
+  try {
+    const params = new URLSearchParams({ url, quality: opt.quality, format: currentFormat });
+    // Trigger file download via link
+    const dlUrl = `${API_BASE}/download?${params}`;
+    const a = document.createElement('a');
+    a.href = dlUrl;
+    a.download = (currentVideoInfo?.title || 'video') + (currentFormat === 'mp3' ? '.mp3' : '.mp4');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    clearInterval(interval);
+    $('dpBar').style.width = '100%';
+    await new Promise(r => setTimeout(r, 800));
+
+    $('doneSub').textContent = `"${currentVideoInfo?.title || 'Video'}" — ${opt.label}`;
+    showOnly(donePanel);
+  } catch(err) {
+    clearInterval(interval);
+    $('errorBoxMsg').textContent = err.message || 'Download failed. Please try again.';
+    showOnly(errorBox);
+  }
+}
+
+function formatDur(s) {
+  const m = Math.floor(s/60), sec = s%60;
+  return `${m}:${String(sec).padStart(2,'0')}`;
+}
+
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item'), open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-btn').setAttribute('aria-expanded','false'); });
+    if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+showOnly(inputPanel);
+</script>
+</body>
+</html>
