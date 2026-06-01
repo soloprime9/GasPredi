@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import JSZip from 'jszip';
 import { jsPDF } from 'jspdf';
