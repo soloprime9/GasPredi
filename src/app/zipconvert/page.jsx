@@ -1,6 +1,6 @@
 // src/app/zipconvet/page.jsx
 import React from 'react';
-import ZipExporter from '@/components/ZipExporter'; // '@/' points to your 'src/' directory
+import ZipExporter from '@/Components/ZipExporter'; // '@/' points to your 'src/' directory
 
 export default function ZipConvertPage() {
   return (
