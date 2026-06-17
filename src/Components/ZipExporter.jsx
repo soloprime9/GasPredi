@@ -96,7 +96,7 @@ export default function ZipExporter() {
 
   const triggerDownload = () => {
     if (!zipBlob) return;
-    saveAs(zipBlob, 'indicatorhub-export-package.zip');
+    saveAs(zipBlob, 'FondPeaceZipConvertedFile.zip');
   };
 
   return (
