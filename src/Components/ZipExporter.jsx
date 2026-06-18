@@ -221,7 +221,7 @@ export default function ZipExporter() {
                     <Archive className="h-4 w-4" />
                     <span>Compile Workspace Build</span>
                   </>
-                ))}
+                )}
               </button>
             )}
 
@@ -316,7 +316,6 @@ export default function ZipExporter() {
     </div>
   );
 }
-
 
 
 
