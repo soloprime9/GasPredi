@@ -1,6 +1,6 @@
 import React from 'react';
 import ZipExporter from '@/Components/ZipExporter';
-
+ 
 // 1. Highly Optimized Dynamic Next.js Metadata (Avoiding pipe symbols)
 export const metadata = {
   title: "Online Folder to ZIP Converter - Free Client-Side File Compressor",
